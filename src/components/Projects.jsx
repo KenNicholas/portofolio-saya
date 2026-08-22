@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Code2, X, ExternalLink, ChevronDown, Search, Filter, Calendar } from 'lucide-react'; 
+import { Code2, X, ExternalLink, ChevronDown, ChevronUp, Search, Filter, Calendar } from 'lucide-react'; 
 import Reveal from './Reveal';
 
 const GithubIcon = ({ size = 24, className = "" }) => (
@@ -28,6 +28,16 @@ export default function Projects() {
 
   const handleLoadMore = () => {
     setVisibleCount(prevCount => prevCount + 4);
+  };
+
+  // 2. Tambahkan fungsi handleShowLess
+  const handleShowLess = () => {
+    setVisibleCount(4);
+    // Scroll otomatis ke bagian atas section projects
+    const section = document.getElementById('projects');
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   const projects = [
@@ -163,7 +173,6 @@ export default function Projects() {
     }
   ];
 
-  // Menggunakan .slice().reverse() agar id terbesar (paling baru) berada di urutan paling atas
   const filteredProjects = projects.slice().reverse().filter((proj) => {
     const matchesSearch = proj.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
                           proj.desc.toLowerCase().includes(searchQuery.toLowerCase());
@@ -283,15 +292,25 @@ export default function Projects() {
             )}
           </div>
 
-          {/* View More */}
-          {visibleCount < filteredProjects.length && (
-            <div className="mt-12 flex justify-center">
-              <button 
-                onClick={handleLoadMore}
-                className="group flex items-center gap-2 px-8 py-3.5 bg-white dark:bg-[#111827] border-2 border-slate-200 dark:border-slate-800 hover:border-teal-500 hover:shadow-[0_0_20px_rgba(20,184,166,0.2)] rounded-xl font-bold text-slate-700 dark:text-slate-300 hover:text-teal-600 dark:hover:text-teal-400 transition-all duration-300"
-              >
-                View More Projects <ChevronDown size={18} className="group-hover:translate-y-1 transition-transform" />
-              </button>
+          {(visibleCount < filteredProjects.length || visibleCount > 4) && (
+            <div className="mt-12 flex flex-wrap justify-center gap-4">
+              {visibleCount < filteredProjects.length && (
+                <button 
+                  onClick={handleLoadMore}
+                  className="group flex items-center gap-2 px-8 py-3.5 bg-white dark:bg-[#111827] border-2 border-slate-200 dark:border-slate-800 hover:border-teal-500 hover:shadow-[0_0_20px_rgba(20,184,166,0.2)] rounded-xl font-bold text-slate-700 dark:text-slate-300 hover:text-teal-600 dark:hover:text-teal-400 transition-all duration-300"
+                >
+                  View More <ChevronDown size={18} className="group-hover:translate-y-1 transition-transform" />
+                </button>
+              )}
+
+              {visibleCount > 4 && (
+                <button 
+                  onClick={handleShowLess}
+                  className="group flex items-center gap-2 px-8 py-3.5 bg-slate-50 dark:bg-[#1e2029] border-2 border-slate-200 dark:border-slate-800 hover:border-rose-500 hover:shadow-[0_0_20px_rgba(244,63,94,0.15)] rounded-xl font-bold text-slate-600 dark:text-slate-400 hover:text-rose-500 dark:hover:text-rose-400 transition-all duration-300"
+                >
+                  Show Less <ChevronUp size={18} className="group-hover:-translate-y-1 transition-transform" />
+                </button>
+              )}
             </div>
           )}
 

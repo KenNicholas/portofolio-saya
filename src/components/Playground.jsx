@@ -253,15 +253,17 @@ export default function Game() {
       {/* Pop-up */}
       {pullResults && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8 bg-slate-950/90 backdrop-blur-xl transition-opacity animate-in fade-in duration-300">
-          <div className="w-full max-w-5xl flex flex-col items-center">
+          
+          {/* PERBAIKAN DI SINI: Tambahkan max-h-[90vh], overflow-y-auto, dan py-4 */}
+          <div className="w-full max-w-5xl flex flex-col items-center max-h-[90vh] overflow-y-auto py-4 scrollbar-smooth">
             
-            <div className="w-full flex justify-between items-center mb-8 px-4">
-              <h3 className="text-2xl font-black text-white uppercase tracking-widest flex items-center gap-3">
+            <div className="w-full flex justify-between items-center mb-8 px-4 mt-2">
+              <h3 className="text-xl md:text-2xl font-black text-white uppercase tracking-widest flex items-center gap-3">
                 <Sparkles className="text-teal-400" /> Warp Results
               </h3>
               <button 
                 onClick={() => setPullResults(null)} 
-                className="w-10 h-10 bg-slate-800 hover:bg-red-500 rounded-full flex items-center justify-center text-white transition-colors"
+                className="w-10 h-10 bg-slate-800 hover:bg-red-500 rounded-full flex items-center justify-center text-white transition-colors shrink-0"
               >
                 <X size={20} />
               </button>
@@ -293,9 +295,10 @@ export default function Game() {
               ))}
             </div>
 
+            {/* Tambahan mb-4 agar ada jarak saat di-scroll sampai bawah */}
             <button 
               onClick={() => setPullResults(null)}
-              className="mt-12 px-8 py-3 bg-white hover:bg-slate-200 text-slate-900 font-bold rounded-full transition"
+              className="mt-10 mb-4 px-10 py-3.5 bg-white hover:bg-slate-200 text-slate-900 font-extrabold rounded-full transition shadow-xl hover:scale-105"
             >
               Confirm
             </button>
