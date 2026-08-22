@@ -78,7 +78,7 @@ export default function Hero() {
                 <div className="absolute -inset-2 bg-gradient-to-tr from-teal-500 to-blue-600 rounded-3xl blur-xl opacity-40 group-hover:opacity-70 animate-pulse transition duration-500" />
                 <div className="relative aspect-square w-full rounded-3xl overflow-hidden border-2 border-slate-700 bg-slate-900 shadow-2xl">
                   <img 
-                    src="src\assets\profile.jpeg" 
+                    src={profilePic} 
                     alt="Ken Nicholas Latif" 
                     className="w-full h-full object-cover object-center group-hover:sepia group-hover:scale-105 transition-all duration-500"
                   />
