@@ -17,44 +17,44 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-white dark:bg-[#080c14] border-t border-slate-200 dark:border-slate-800 pt-16 pb-8">
+    <footer className="bg-gradient-to-br from-orange-100/70 to-amber-100/70 dark:bg-none dark:bg-[#080c14] border-t border-amber-300/60 dark:border-slate-800 pt-16 pb-8">
       <div className="w-[85%] max-w-6xl mx-auto">
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-16">
           
           <div className="space-y-4 lg:col-span-1">
-            <div className="flex items-center gap-1.5 font-bold text-xl text-slate-800 dark:text-white">
-              <div className="w-3 h-3 rounded-full bg-teal-500"></div>
-              <div className="w-3 h-3 rounded-full bg-blue-500"></div>
+            <div className="flex items-center gap-1.5 font-bold text-xl text-orange-950 dark:text-white">
+              <div className="w-3 h-3 rounded-full bg-amber-500"></div>
+              <div className="w-3 h-3 rounded-full bg-orange-500"></div>
               <span className="ml-2 font-mono tracking-tight">Ken.Dev</span>
             </div>
-            <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
+            <p className="text-sm text-orange-900/80 dark:text-slate-400 leading-relaxed font-medium dark:font-normal">
               Designing and building intelligent systems, exploring modern tech, and crafting seamless user experiences.
             </p>
           </div>
 
           <div className="space-y-4">
-            <h4 className="text-sm font-black text-slate-900 dark:text-white uppercase tracking-wider">Quick Links</h4>
-            <ul className="space-y-2 text-sm font-medium text-slate-500 dark:text-slate-400">
-              <li><a href="#home" className="hover:text-teal-500 transition-colors">Home</a></li>
-              <li><a href="#about" className="hover:text-teal-500 transition-colors">About Me</a></li>
-              <li><a href="#skills" className="hover:text-teal-500 transition-colors">Skills</a></li>
-              <li><a href="#projects" className="hover:text-teal-500 transition-colors">Projects</a></li>
-              <li><a href="#gallery" className="hover:text-teal-500 transition-colors">Life Gallery</a></li>
-              <li><a href="#game" className="hover:text-teal-500 transition-colors">Playground</a></li>
+            <h4 className="text-sm font-black text-orange-950 dark:text-white uppercase tracking-wider">Quick Links</h4>
+            <ul className="space-y-2 text-sm font-medium text-orange-900/80 dark:text-slate-400">
+              <li><a href="#home" className="hover:text-amber-600 dark:hover:text-amber-400 transition-colors">Home</a></li>
+              <li><a href="#about" className="hover:text-amber-600 dark:hover:text-amber-400 transition-colors">About Me</a></li>
+              <li><a href="#skills" className="hover:text-amber-600 dark:hover:text-amber-400 transition-colors">Skills</a></li>
+              <li><a href="#projects" className="hover:text-amber-600 dark:hover:text-amber-400 transition-colors">Projects</a></li>
+              <li><a href="#gallery" className="hover:text-amber-600 dark:hover:text-amber-400 transition-colors">Life Gallery</a></li>
+              <li><a href="#game" className="hover:text-amber-600 dark:hover:text-amber-400 transition-colors">Playground</a></li>
             </ul>
           </div>
 
           <div className="space-y-4">
-            <h4 className="text-sm font-black text-slate-900 dark:text-white uppercase tracking-wider">Contact Me</h4>
-            <ul className="space-y-3 text-sm font-medium text-slate-500 dark:text-slate-400">
+            <h4 className="text-sm font-black text-orange-950 dark:text-white uppercase tracking-wider">Contact Me</h4>
+            <ul className="space-y-3 text-sm font-medium text-orange-900/80 dark:text-slate-400">
               <li className="flex items-start gap-3 group">
-                <Mail size={16} className="text-teal-500 mt-0.5 group-hover:scale-110 transition-transform" />
-                <a href="mailto:kennicholas@example.com" className="hover:text-teal-500 transition-colors">kennicholas@example.com</a>
+                <Mail size={16} className="text-amber-600 dark:text-amber-400 mt-0.5 group-hover:scale-110 transition-transform" />
+                <a href="mailto:kennicholas89@gmail.com" className="hover:text-amber-600 dark:hover:text-amber-400 transition-colors">kennicholas89@gmail.com</a>
               </li>
               <li className="flex items-start gap-3 group">
-                <Phone size={16} className="text-blue-500 mt-0.5 group-hover:scale-110 transition-transform" />
-                <a href="https://wa.me/62895338066318" target="_blank" rel="noreferrer" className="hover:text-blue-500 transition-colors">+62 895 3380 66318</a>
+                <Phone size={16} className="text-orange-600 dark:text-orange-400 mt-0.5 group-hover:scale-110 transition-transform" />
+                <a href="https://wa.me/62895338066318" target="_blank" rel="noreferrer" className="hover:text-orange-600 dark:hover:text-orange-400 transition-colors">+62 895 3380 66318</a>
               </li>
               <li className="flex items-start gap-3 group">
                 <MapPin size={16} className="text-rose-500 mt-0.5 group-hover:scale-110 transition-transform" />
@@ -64,25 +64,25 @@ export default function Footer() {
           </div>
 
           <div className="space-y-4">
-            <h4 className="text-sm font-black text-slate-900 dark:text-white uppercase tracking-wider">Social Media</h4>
-            <p className="text-sm text-slate-500 dark:text-slate-400 mb-4">Let's connect and build something awesome together.</p>
+            <h4 className="text-sm font-black text-orange-950 dark:text-white uppercase tracking-wider">Social Media</h4>
+            <p className="text-sm text-orange-900/80 dark:text-slate-400 mb-4 font-medium dark:font-normal">Let's connect and build something awesome together.</p>
             <div className="flex gap-3">
               {/* GitHub */}
               <a 
                 href="https://github.com/KenNicholas" 
                 target="_blank" 
                 rel="noreferrer" 
-                className="w-10 h-10 bg-slate-100 dark:bg-slate-800 rounded-full flex items-center justify-center text-slate-600 dark:text-slate-400 hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-slate-900 transition-all duration-300 hover:-translate-y-1"
+                className="w-10 h-10 bg-white/70 dark:bg-slate-800 border border-amber-300 dark:border-slate-700 rounded-full flex items-center justify-center text-orange-950 dark:text-slate-400 hover:bg-amber-500 hover:text-white dark:hover:bg-white dark:hover:text-slate-900 transition-all duration-300 hover:-translate-y-1"
                 aria-label="GitHub"
               >
                 <GithubIcon size={18} />
               </a>
               {/* LinkedIn */}
               <a 
-                href="https://linkedin.com/in/KenNicholas" 
+                href="https://www.linkedin.com/in/ken-nicholas-latif-6456a0325/" 
                 target="_blank" 
                 rel="noreferrer" 
-                className="w-10 h-10 bg-slate-100 dark:bg-slate-800 rounded-full flex items-center justify-center text-slate-600 dark:text-slate-400 hover:bg-[#0077b5] hover:text-white dark:hover:bg-[#0077b5] transition-all duration-300 hover:-translate-y-1"
+                className="w-10 h-10 bg-white/70 dark:bg-slate-800 border border-amber-300 dark:border-slate-700 rounded-full flex items-center justify-center text-orange-950 dark:text-slate-400 hover:bg-[#0077b5] hover:text-white dark:hover:bg-[#0077b5] transition-all duration-300 hover:-translate-y-1"
                 aria-label="LinkedIn"
               >
                 <LinkedinIcon size={18} />
@@ -92,7 +92,7 @@ export default function Footer() {
                 href="https://www.instagram.com/kennn_2707?igsi=OXhmZWlxc3VuZnAz" 
                 target="_blank" 
                 rel="noreferrer" 
-                className="w-10 h-10 bg-slate-100 dark:bg-slate-800 rounded-full flex items-center justify-center text-slate-600 dark:text-slate-400 hover:bg-gradient-to-tr hover:from-yellow-400 hover:via-rose-500 hover:to-purple-500 hover:text-white dark:hover:text-white transition-all duration-300 hover:-translate-y-1"
+                className="w-10 h-10 bg-white/70 dark:bg-slate-800 border border-amber-300 dark:border-slate-700 rounded-full flex items-center justify-center text-orange-950 dark:text-slate-400 hover:bg-gradient-to-tr hover:from-yellow-400 hover:via-rose-500 hover:to-purple-500 hover:text-white dark:hover:text-white transition-all duration-300 hover:-translate-y-1"
                 aria-label="Instagram"
               >
                 <InstagramIcon size={18} />
@@ -103,7 +103,7 @@ export default function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="pt-8 border-t border-slate-200 dark:border-slate-800 flex flex-col md:flex-row items-center justify-between gap-4 text-xs font-semibold text-slate-500 dark:text-slate-400">
+        <div className="pt-8 border-t border-amber-300/60 dark:border-slate-800 flex flex-col md:flex-row items-center justify-between gap-4 text-xs font-semibold text-orange-900/80 dark:text-slate-400">
           <p>© {currentYear} Ken.Dev. All rights reserved.</p>
           <p className="flex items-center gap-1.5">
             Built using React & TailwindCSS.

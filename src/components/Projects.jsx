@@ -28,8 +28,8 @@ const ProjectCard = ({ proj, onOpen }) => {
   }, [proj.images]);
 
   return (
-    <div className="group bg-white dark:bg-[#111827] border-2 border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden hover:border-teal-400 dark:hover:border-teal-500 hover:shadow-[0_0_25px_rgba(20,184,166,0.6)] transition-all duration-500 flex flex-col">
-      <div className="h-56 overflow-hidden border-b-2 border-slate-200 dark:border-slate-800 relative group/img">
+    <div className="group bg-gradient-to-br from-orange-100/70 to-amber-100/70 dark:bg-none dark:bg-[#111827] border-2 border-amber-400/80 dark:border-slate-800 rounded-2xl overflow-hidden hover:border-amber-500 dark:hover:border-amber-500 hover:shadow-[0_0_25px_rgba(245,158,11,0.5)] transition-all duration-500 flex flex-col">
+      <div className="h-56 overflow-hidden border-b-2 border-amber-300 dark:border-slate-800 relative group/img">
         
         <div 
           className="flex h-full transition-transform duration-700 ease-out"
@@ -55,7 +55,7 @@ const ProjectCard = ({ proj, onOpen }) => {
       </div>
       
       <div className="p-6 flex-1 flex flex-col">
-        <h3 className="text-xl font-extrabold mb-2 text-slate-900 dark:text-white">{proj.title}</h3>
+        <h3 className="text-xl font-extrabold mb-2 text-orange-950 dark:text-white">{proj.title}</h3>
         
         <div className="flex flex-wrap items-center gap-2 mb-4">
           {proj.categories.map(cat => (
@@ -63,25 +63,25 @@ const ProjectCard = ({ proj, onOpen }) => {
               {cat}
             </span>
           ))}
-          <span className="px-3 py-0.5 bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 rounded-full text-xs font-bold border border-slate-200 dark:border-slate-700">
+          <span className="px-3 py-0.5 bg-white/70 dark:bg-slate-800 text-orange-900 dark:text-slate-400 rounded-full text-xs font-bold border-2 border-amber-300 dark:border-slate-700">
             Made in: {proj.year}
           </span>
         </div>
 
-        <p className="text-xs text-slate-500 dark:text-slate-400 mb-6 flex-1">{proj.desc}</p>
+        <p className="text-xs text-orange-900/80 dark:text-slate-400 mb-6 flex-1 font-medium dark:font-normal">{proj.desc}</p>
         
         <div className="mt-auto flex flex-wrap gap-2">
-          <button onClick={() => onOpen(proj)} className="px-4 py-2 border border-slate-300 dark:border-slate-700 rounded-lg text-sm font-bold hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-teal-600 dark:hover:text-teal-400 hover:border-teal-500/50 transition-all duration-300 flex items-center gap-2">
+          <button onClick={() => onOpen(proj)} className="px-4 py-2 border-2 border-amber-400 dark:border-slate-700 bg-white/60 dark:bg-transparent rounded-lg text-sm font-bold hover:bg-amber-100 dark:hover:bg-amber-950/40 hover:text-amber-700 dark:hover:text-amber-400 hover:border-amber-500 transition-all duration-300 flex items-center gap-2 text-orange-950 dark:text-white">
             <ExternalLink size={14}/> View Details
           </button>
           
           {proj.demoUrl && (
-             <a href={proj.demoUrl} target="_blank" rel="noreferrer" className="px-4 py-2 border border-slate-300 dark:border-slate-700 rounded-lg text-sm font-bold hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-blue-600 dark:hover:text-blue-400 hover:border-blue-500/50 transition-all duration-300 flex items-center gap-2">
-               Demo
+             <a href={proj.demoUrl} target="_blank" rel="noreferrer" className="px-4 py-2 border-2 border-orange-400 dark:border-slate-700 bg-white/60 dark:bg-transparent rounded-lg text-sm font-bold hover:bg-orange-100 dark:hover:bg-orange-950/40 hover:text-orange-600 dark:hover:text-orange-400 hover:border-orange-500 transition-all duration-300 flex items-center gap-2 text-orange-950 dark:text-white">
+              Demo
              </a>
           )}
           {proj.codeUrl && (
-            <a href={proj.codeUrl} target="_blank" rel="noreferrer" className="px-4 py-2 border border-slate-300 dark:border-slate-700 rounded-lg text-sm font-bold hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-indigo-600 dark:hover:text-indigo-400 hover:border-indigo-500/50 transition-all duration-300 flex items-center gap-2">
+            <a href={proj.codeUrl} target="_blank" rel="noreferrer" className="px-4 py-2 border-2 border-rose-400 dark:border-slate-700 bg-white/60 dark:bg-transparent rounded-lg text-sm font-bold hover:bg-rose-100 dark:hover:bg-rose-950/40 hover:text-rose-600 dark:hover:text-rose-400 hover:border-rose-500 transition-all duration-300 flex items-center gap-2 text-orange-950 dark:text-white">
               <GithubIcon size={14}/> Code
             </a>
           )}
@@ -392,8 +392,8 @@ export default function Projects() {
           
           <div className="flex flex-col xl:flex-row xl:items-end justify-between gap-6 mb-10">
             <div className="flex items-center gap-3 shrink-0">
-              <Code2 className="text-blue-500" size={32} />
-              <h2 className="text-3xl md:text-4xl font-extrabold">Projects</h2>
+              <Code2 className="text-amber-500 dark:text-amber-400" size={32} />
+              <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white">Projects</h2>
             </div>
 
             <div className="flex flex-col sm:flex-row flex-wrap items-center gap-3 w-full xl:w-auto">
@@ -405,17 +405,17 @@ export default function Projects() {
                   placeholder="Search projects..." 
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-9 pr-4 py-2.5 bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-700 rounded-xl text-sm focus:outline-none focus:border-teal-500 focus:ring-1 focus:ring-teal-500 transition shadow-sm dark:text-white placeholder:text-slate-400"
+                  className="w-full pl-9 pr-4 py-2.5 bg-gradient-to-br from-orange-100 to-amber-100 dark:bg-none dark:bg-[#111827] border-2 border-amber-400/80 dark:border-slate-700 rounded-xl text-sm focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition shadow-sm dark:text-white placeholder:text-slate-400 font-medium"
                 />
               </div>
 
               <div className="relative w-full sm:w-auto">
                 <div 
                   onClick={() => setIsCategoryOpen(!isCategoryOpen)}
-                  className="w-full sm:w-auto pl-9 pr-10 py-2.5 bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-700 rounded-xl text-sm font-semibold cursor-pointer focus:outline-none focus:border-teal-500 shadow-sm dark:text-white transition flex items-center select-none min-w-[160px]"
+                  className="w-full sm:w-auto pl-9 pr-10 py-2.5 bg-gradient-to-br from-orange-100 to-amber-100 dark:bg-none dark:bg-[#111827] border-2 border-amber-400/80 dark:border-slate-700 rounded-xl text-sm font-semibold cursor-pointer focus:outline-none focus:border-amber-500 shadow-sm dark:text-white transition flex items-center select-none min-w-[160px]"
                 >
                   <Filter size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none" />
-                  <span className="truncate">
+                  <span className="truncate text-orange-950 dark:text-white">
                     {selectedCategories.length === 0 ? "All Categories" : `${selectedCategories.length} Selected`}
                   </span>
                   <ChevronDown size={14} className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none" />
@@ -425,23 +425,23 @@ export default function Projects() {
                   <>
                     <div className="fixed inset-0 z-10" onClick={() => setIsCategoryOpen(false)}></div>
                     
-                    <div className="absolute left-0 mt-2 w-52 bg-white dark:bg-[#1e2029] border border-slate-200 dark:border-slate-700 rounded-xl shadow-xl z-20 py-2 animate-in fade-in zoom-in-95 duration-200">
+                    <div className="absolute left-0 mt-2 w-52 bg-gradient-to-br from-orange-100 to-amber-100 dark:bg-none dark:bg-[#1e2029] border-2 border-amber-400 dark:border-slate-700 rounded-xl shadow-xl z-20 py-2 animate-in fade-in zoom-in-95 duration-200">
                       {availableCategories.map(cat => {
                         const isSelected = selectedCategories.includes(cat);
                         return (
                           <div 
                             key={cat} 
                             onClick={() => toggleCategory(cat)}
-                            className="flex items-center px-4 py-2.5 hover:bg-slate-50 dark:hover:bg-slate-800 cursor-pointer transition-colors"
+                            className="flex items-center px-4 py-2.5 hover:bg-amber-200/50 dark:hover:bg-slate-800 cursor-pointer transition-colors"
                           >
-                            <div className={`w-4 h-4 rounded border flex items-center justify-center mr-3 transition-colors ${
+                            <div className={`w-4 h-4 rounded border-2 flex items-center justify-center mr-3 transition-colors ${
                               isSelected 
-                                ? 'bg-teal-500 border-teal-500 text-white' 
-                                : 'border-slate-300 dark:border-slate-600 bg-white dark:bg-[#111827]'
+                                ? 'bg-amber-500 border-amber-600 text-white' 
+                                : 'border-amber-400 dark:border-slate-600 bg-white dark:bg-[#111827]'
                             }`}>
                               {isSelected && <Check size={12} strokeWidth={4} />}
                             </div>
-                            <span className="text-sm font-bold text-slate-700 dark:text-slate-300">{cat}</span>
+                            <span className="text-sm font-bold text-orange-950 dark:text-slate-300">{cat}</span>
                           </div>
                         );
                       })}
@@ -455,7 +455,7 @@ export default function Projects() {
                 <select 
                   value={filterYear}
                   onChange={(e) => setFilterYear(e.target.value)}
-                  className="w-full sm:w-auto appearance-none pl-9 pr-10 py-2.5 bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-700 rounded-xl text-sm font-semibold cursor-pointer focus:outline-none focus:border-teal-500 shadow-sm dark:text-white transition"
+                  className="w-full sm:w-auto appearance-none pl-9 pr-10 py-2.5 bg-gradient-to-br from-orange-100 to-amber-100 dark:bg-none dark:bg-[#111827] border-2 border-amber-400/80 dark:border-slate-700 rounded-xl text-sm font-semibold cursor-pointer focus:outline-none focus:border-amber-500 shadow-sm dark:text-white transition text-orange-950"
                 >
                   <option value="All">All Years</option>
                   <option value="2026">2026</option>
@@ -471,9 +471,9 @@ export default function Projects() {
             {filteredProjects.length === 0 ? (
               
               <div className="col-span-full flex flex-col items-center justify-center h-[300px] md:h-[400px] animate-in fade-in duration-500">
-                <Code2 size={48} className="text-slate-300 dark:text-slate-600 mb-4 opacity-60" />
-                <span className="text-slate-400 dark:text-slate-500 font-extrabold uppercase tracking-[0.2em] text-sm mb-2">Projects Not Found</span>
-                <p className="text-slate-500 dark:text-slate-500 text-xs">Try adjusting your category filters or search query.</p>
+                <Code2 size={48} className="text-amber-500/60 dark:text-slate-600 mb-4 opacity-60" />
+                <span className="text-orange-900 dark:text-slate-500 font-extrabold uppercase tracking-[0.2em] text-sm mb-2">Projects Not Found</span>
+                <p className="text-slate-500 text-xs">Try adjusting your category filters or search query.</p>
               </div>
 
             ) : (
@@ -488,7 +488,7 @@ export default function Projects() {
               {visibleCount < filteredProjects.length && (
                 <button 
                   onClick={handleLoadMore}
-                  className="group flex items-center gap-2 px-8 py-3.5 bg-white dark:bg-[#111827] border-2 border-slate-200 dark:border-slate-800 hover:border-teal-500 hover:shadow-[0_0_20px_rgba(20,184,166,0.2)] rounded-xl font-bold text-slate-700 dark:text-slate-300 hover:text-teal-600 dark:hover:text-teal-400 transition-all duration-300"
+                  className="group flex items-center gap-2 px-8 py-3.5 bg-gradient-to-br from-orange-100 to-amber-100 dark:bg-none dark:bg-[#111827] border-2 border-amber-400 dark:border-slate-800 hover:border-amber-500 hover:shadow-[0_0_20px_rgba(245,158,11,0.3)] rounded-xl font-bold text-orange-950 dark:text-slate-300 hover:text-amber-600 dark:hover:text-amber-400 transition-all duration-300"
                 >
                   View More <ChevronDown size={18} className="group-hover:translate-y-1 transition-transform" />
                 </button>
@@ -497,7 +497,7 @@ export default function Projects() {
               {visibleCount > 4 && (
                 <button 
                   onClick={handleShowLess}
-                  className="group flex items-center gap-2 px-8 py-3.5 bg-slate-50 dark:bg-[#1e2029] border-2 border-slate-200 dark:border-slate-800 hover:border-rose-500 hover:shadow-[0_0_20px_rgba(244,63,94,0.15)] rounded-xl font-bold text-slate-600 dark:text-slate-400 hover:text-rose-500 dark:hover:text-rose-400 transition-all duration-300"
+                  className="group flex items-center gap-2 px-8 py-3.5 bg-gradient-to-br from-orange-100 to-amber-100 dark:bg-none dark:bg-[#1e2029] border-2 border-amber-400 dark:border-slate-800 hover:border-rose-500 hover:shadow-[0_0_20px_rgba(244,63,94,0.15)] rounded-xl font-bold text-orange-950 dark:text-slate-400 hover:text-rose-500 dark:hover:text-rose-400 transition-all duration-300"
                 >
                   Show Less <ChevronUp size={18} className="group-hover:-translate-y-1 transition-transform" />
                 </button>
@@ -515,10 +515,10 @@ export default function Projects() {
           onClick={() => setSelectedProject(null)} 
         >
           <div 
-            className="bg-white dark:bg-[#1e2029] w-full max-w-4xl rounded-2xl overflow-hidden shadow-2xl animate-in fade-in zoom-in duration-300 border border-slate-200 dark:border-slate-700 max-h-[90vh] overflow-y-auto"
+            className="bg-gradient-to-br from-orange-100 via-amber-50 to-orange-100 dark:bg-none dark:bg-[#1e2029] w-full max-w-4xl rounded-2xl overflow-hidden shadow-2xl animate-in fade-in zoom-in duration-300 border-2 border-amber-400 dark:border-slate-700 max-h-[90vh] overflow-y-auto"
             onClick={(e) => e.stopPropagation()} 
           >
-            <div className="bg-slate-100 dark:bg-[#2a2d39] px-4 py-3 flex items-center justify-between border-b border-slate-200 dark:border-slate-800 sticky top-0 z-10">
+            <div className="bg-amber-200/60 dark:bg-[#2a2d39] px-4 py-3 flex items-center justify-between border-b-2 border-amber-300 dark:border-slate-800 sticky top-0 z-10">
               <div className="flex gap-2.5">
                 <button onClick={() => setSelectedProject(null)} className="w-4 h-4 rounded-full bg-[#ff5f56] flex items-center justify-center group hover:bg-[#ff5f56]/80 transition">
                   <X size={10} className="text-black opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -526,12 +526,12 @@ export default function Projects() {
                 <div className="w-4 h-4 rounded-full bg-[#ffbd2e]"></div>
                 <div className="w-4 h-4 rounded-full bg-[#27c93f]"></div>
               </div>
-              <span className="text-xs text-slate-500 font-bold uppercase tracking-wider">Project Details</span>
+              <span className="text-xs text-orange-900 dark:text-slate-400 font-bold uppercase tracking-wider">Project Details</span>
               
               <div className="flex justify-end">
                 <button 
                   onClick={() => setSelectedProject(null)} 
-                  className="p-1.5 rounded-full text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-200/80 dark:hover:bg-slate-700/80 transition-all duration-200"
+                  className="p-1.5 rounded-full text-orange-900 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-amber-200/80 dark:hover:bg-slate-700/80 transition-all duration-200"
                 >
                   <X size={20} />
                 </button>
@@ -542,7 +542,7 @@ export default function Projects() {
               
               <div className="w-full md:w-1/2 space-y-5">
                 
-                <div className="overflow-hidden rounded-xl border-2 border-slate-200 dark:border-slate-700 relative h-64 sm:h-80 bg-slate-200/50 dark:bg-slate-800/50 group">
+                <div className="overflow-hidden rounded-xl border-2 border-amber-300 dark:border-slate-700 relative h-64 sm:h-80 bg-white/50 dark:bg-slate-800/50 group">
                   <div 
                     className="flex h-full transition-transform duration-700 ease-out"
                     style={{ transform: `translateX(-${modalImgIndex * 100}%)` }}
@@ -589,12 +589,12 @@ export default function Projects() {
                 {(selectedProject.demoUrl || selectedProject.codeUrl) && (
                   <div className="flex gap-3">
                     {selectedProject.demoUrl && (
-                      <a href={selectedProject.demoUrl} target="_blank" rel="noreferrer" className="flex-1 flex justify-center items-center gap-2 py-3 bg-teal-600 hover:bg-teal-500 text-white rounded-lg text-sm font-bold shadow-lg hover:shadow-teal-500/30 hover:-translate-y-1 transition-all duration-300">
+                      <a href={selectedProject.demoUrl} target="_blank" rel="noreferrer" className="flex-1 flex justify-center items-center gap-2 py-3 bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-400 hover:to-orange-500 text-white rounded-lg text-sm font-bold shadow-lg hover:shadow-orange-500/30 hover:-translate-y-1 transition-all duration-300">
                         <ExternalLink size={16}/> Live Demo
                       </a>
                     )}
                     {selectedProject.codeUrl && (
-                      <a href={selectedProject.codeUrl} target="_blank" rel="noreferrer" className="flex-1 flex justify-center items-center gap-2 py-3 border-2 border-slate-300 dark:border-slate-700 rounded-lg text-sm font-bold hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-indigo-500 hover:border-indigo-500 hover:-translate-y-1 transition-all duration-300 text-slate-900 dark:text-white">
+                      <a href={selectedProject.codeUrl} target="_blank" rel="noreferrer" className="flex-1 flex justify-center items-center gap-2 py-3 border-2 border-amber-400 dark:border-slate-700 bg-white/60 dark:bg-transparent rounded-lg text-sm font-bold hover:bg-rose-100 dark:hover:bg-rose-950/40 hover:text-rose-600 hover:border-rose-500 hover:-translate-y-1 transition-all duration-300 text-orange-950 dark:text-white">
                         <GithubIcon size={16}/> Source Code
                       </a>
                     )}
@@ -603,22 +603,22 @@ export default function Projects() {
               </div>
 
               <div className="w-full md:w-1/2 flex flex-col justify-start">
-                <h3 className="text-3xl md:text-4xl font-black mb-2 text-slate-900 dark:text-white tracking-tight leading-tight">
+                <h3 className="text-3xl md:text-4xl font-black mb-2 text-orange-950 dark:text-white tracking-tight leading-tight">
                   {selectedProject.title}
                 </h3>
-                <p className="text-teal-600 dark:text-teal-400 font-bold mb-6">{selectedProject.type}</p>
+                <p className="text-amber-600 dark:text-amber-400 font-bold mb-6">{selectedProject.type}</p>
                 
-                <h4 className="text-sm font-bold mb-2 text-slate-900 dark:text-white uppercase tracking-wider">About the Project</h4>
-                <p className="text-sm md:text-base text-slate-600 dark:text-slate-400 mb-8 leading-relaxed text-justify">
+                <h4 className="text-sm font-bold mb-2 text-orange-950 dark:text-white uppercase tracking-wider">About the Project</h4>
+                <p className="text-sm md:text-base text-orange-900/80 dark:text-slate-400 mb-8 leading-relaxed text-justify font-medium dark:font-normal">
                   {selectedProject.fullDesc}
                 </p>
                 
-                <h4 className="text-sm font-bold mb-3 text-slate-900 dark:text-white uppercase tracking-wider">Core Technologies</h4>
+                <h4 className="text-sm font-bold mb-3 text-orange-950 dark:text-white uppercase tracking-wider">Core Technologies</h4>
                 <div className="flex flex-wrap gap-2">
                   {selectedProject.tech.map(t => (
                     <span 
                       key={t} 
-                      className="px-4 py-2 bg-slate-100 dark:bg-[#111827] border border-slate-200 dark:border-slate-700 rounded-lg text-xs font-bold text-slate-700 dark:text-slate-300 cursor-default hover:scale-110 hover:border-teal-500 hover:text-teal-500 hover:shadow-[0_0_15px_rgba(20,184,166,0.3)] transition-all duration-300"
+                      className="px-4 py-2 bg-white/70 dark:bg-[#111827] border-2 border-amber-300 dark:border-slate-700 rounded-lg text-xs font-bold text-orange-950 dark:text-slate-300 cursor-default hover:scale-110 hover:border-amber-500 hover:text-amber-600 hover:shadow-[0_0_15px_rgba(245,158,11,0.3)] transition-all duration-300"
                     >
                       {t}
                     </span>
@@ -637,7 +637,6 @@ export default function Projects() {
           className="fixed inset-0 z-[200] flex items-center justify-center bg-black/95 backdrop-blur-sm animate-in fade-in duration-300"
           onClick={() => setLightboxIndex(null)}
         >
-          {/* Tombol Tutup Besar */}
           <button 
             className="absolute top-6 right-6 text-white/70 hover:text-white transition-colors p-2"
             onClick={() => setLightboxIndex(null)}

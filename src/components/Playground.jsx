@@ -105,48 +105,48 @@ export default function Game() {
         <Reveal>
           
           <div className="flex items-center gap-3 mb-8">
-            <Gamepad2 className="text-teal-500" size={32} />
-            <h2 className="text-3xl md:text-4xl font-extrabold">Playground: The Dev Gacha</h2>
+            <Gamepad2 className="text-amber-500" size={32} />
+            <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white">Playground: The Dev Gacha</h2>
           </div>
 
           <div className="flex flex-col lg:flex-row gap-8">
             
             <div className="w-full lg:w-1/3 space-y-6">
-              <div className="bg-white dark:bg-[#111827] border-2 border-slate-200 dark:border-slate-800 rounded-2xl p-6 shadow-sm">
-                <div className="flex items-center gap-2 mb-4 border-b border-slate-200 dark:border-slate-800 pb-4">
-                  <Info className="text-blue-500" size={20} />
-                  <h3 className="text-xl font-bold">Warp Details</h3>
+              <div className="bg-[#111827] border-2 border-slate-800 rounded-2xl p-6 shadow-sm">
+                <div className="flex items-center gap-2 mb-4 border-b border-slate-800 pb-4">
+                  <Info className="text-amber-400" size={20} />
+                  <h3 className="text-xl font-bold text-white">Warp Details</h3>
                 </div>
                 
                 <div className="space-y-4">
-                  <div className="flex justify-between items-center p-3 bg-orange-50 dark:bg-orange-900/20 rounded-xl border border-orange-200 dark:border-orange-800/50">
+                  <div className="flex justify-between items-center p-3 bg-orange-900/20 rounded-xl border border-orange-800/50">
                     <div>
                       <span className="flex mb-1"><YellowStar/><YellowStar/><YellowStar/><YellowStar/><YellowStar/><YellowStar/></span>
-                      <p className="text-sm font-bold text-slate-800 dark:text-slate-200">SSSR Persona</p>
+                      <p className="text-sm font-bold text-slate-200">SSSR Persona</p>
                     </div>
-                    <span className="text-lg font-black text-orange-600 dark:text-orange-400">1.0%</span>
+                    <span className="text-lg font-black text-orange-400">1.0%</span>
                   </div>
 
-                  <div className="flex justify-between items-center p-3 bg-yellow-50 dark:bg-yellow-900/20 rounded-xl border border-yellow-200 dark:border-yellow-800/50">
+                  <div className="flex justify-between items-center p-3 bg-yellow-900/20 rounded-xl border border-yellow-800/50">
                     <div>
                       <span className="flex mb-1"><YellowStar/><YellowStar/><YellowStar/><YellowStar/><YellowStar/></span>
-                      <p className="text-sm font-bold text-slate-800 dark:text-slate-200">SSR Tool</p>
+                      <p className="text-sm font-bold text-slate-200">SSR Tool</p>
                     </div>
-                    <span className="text-lg font-black text-yellow-600 dark:text-yellow-400">9.0%</span>
+                    <span className="text-lg font-black text-yellow-400">9.0%</span>
                   </div>
 
-                  <div className="flex justify-between items-center p-3 bg-purple-50 dark:bg-purple-900/20 rounded-xl border border-purple-200 dark:border-purple-800/50">
+                  <div className="flex justify-between items-center p-3 bg-purple-900/20 rounded-xl border border-purple-800/50">
                     <div>
                       <span className="flex mb-1"><YellowStar/><YellowStar/><YellowStar/><YellowStar/></span>
-                      <p className="text-sm font-bold text-slate-800 dark:text-slate-200">SR Material</p>
+                      <p className="text-sm font-bold text-slate-200">SR Material</p>
                     </div>
-                    <span className="text-lg font-black text-purple-600 dark:text-purple-400">90.0%</span>
+                    <span className="text-lg font-black text-purple-400">90.0%</span>
                   </div>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-slate-200 dark:border-slate-800 space-y-2">
-                  <p className="text-xs text-slate-500 dark:text-slate-400 flex gap-2"><Zap size={14} className="text-amber-500 shrink-0"/> Hard Pity at 100 pulls guarantees a 6-star.</p>
-                  <p className="text-xs text-slate-500 dark:text-slate-400 flex gap-2"><Zap size={14} className="text-amber-500 shrink-0"/> Every 10 pulls guarantees at least a 5-star.</p>
+                <div className="mt-6 pt-4 border-t border-slate-800 space-y-2">
+                  <p className="text-xs text-slate-400 flex gap-2"><Zap size={14} className="text-amber-500 shrink-0"/> Hard Pity at 100 pulls guarantees a 6-star.</p>
+                  <p className="text-xs text-slate-400 flex gap-2"><Zap size={14} className="text-amber-500 shrink-0"/> Every 10 pulls guarantees at least a 5-star.</p>
                 </div>
               </div>
             </div>
@@ -163,7 +163,7 @@ export default function Game() {
                 <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-900/80 to-transparent"></div>
 
                 <div className="absolute top-0 left-0 p-6 md:p-10 h-full flex flex-col justify-center">
-                  <span className="inline-block px-3 py-1 bg-teal-500/20 text-teal-300 border border-teal-500/50 rounded-full text-xs font-bold mb-4 tracking-widest uppercase w-max">
+                  <span className="inline-block px-3 py-1 bg-amber-500/20 text-amber-300 border border-amber-500/50 rounded-full text-xs font-bold mb-4 tracking-widest uppercase w-max">
                     Limited Event Warp
                   </span>
                   <h3 className="text-4xl md:text-6xl font-black text-white mb-3 leading-tight">
@@ -208,7 +208,7 @@ export default function Game() {
                 <button 
                   onClick={() => handlePull(10)}
                   disabled={isPulling}
-                  className="w-full md:w-auto px-8 py-4 bg-gradient-to-r from-teal-600 to-blue-600 hover:from-teal-500 hover:to-blue-500 text-white border-2 border-teal-400/50 hover:border-teal-300 shadow-[0_0_20px_rgba(20,184,166,0.3)] rounded-xl font-black transition flex flex-col items-center justify-center gap-1 disabled:opacity-50"
+                  className="w-full md:w-auto px-8 py-4 bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-400 hover:to-orange-500 text-white border-2 border-amber-400/50 hover:border-amber-300 shadow-[0_0_20px_rgba(245,158,11,0.3)] rounded-xl font-black transition flex flex-col items-center justify-center gap-1 disabled:opacity-50"
                 >
                   <span className="flex items-center gap-2 text-lg">
                     {isPulling ? <Sparkles className="animate-spin" size={20}/> : <Sparkles size={20}/>} 
@@ -218,29 +218,29 @@ export default function Game() {
               </div>
 
               {/* Record Counter */}
-              <div className="mt-5 bg-white dark:bg-[#111827] border-2 border-slate-200 dark:border-slate-800 rounded-2xl p-4 shadow-sm">
+              <div className="mt-5 bg-[#111827] border-2 border-slate-800 rounded-2xl p-4 shadow-sm">
                 <div className="flex items-center gap-2 mb-3">
-                  <Database className="text-indigo-500" size={16} />
-                  <h3 className="text-sm font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider">Warp Records</h3>
+                  <Database className="text-amber-500" size={16} />
+                  <h3 className="text-sm font-bold text-slate-300 uppercase tracking-wider">Warp Records</h3>
                 </div>
                 
                 <div className="grid grid-cols-3 gap-3">
                   {/* 6-Star Record */}
-                  <div className="flex flex-col items-center justify-center p-2 bg-orange-50 dark:bg-orange-900/10 border border-orange-200 dark:border-orange-800/50 rounded-xl text-center">
-                    <span className="text-xs font-bold text-slate-500 dark:text-slate-400 mb-0.5">SSSR (6★)</span>
-                    <span className="text-xl font-black text-orange-600 dark:text-orange-400 leading-none">{records[6]}</span>
+                  <div className="flex flex-col items-center justify-center p-2 bg-orange-900/10 border border-orange-800/50 rounded-xl text-center">
+                    <span className="text-xs font-bold text-slate-400 mb-0.5">SSSR (6★)</span>
+                    <span className="text-xl font-black text-orange-400 leading-none">{records[6]}</span>
                   </div>
 
                   {/* 5-Star Record */}
-                  <div className="flex flex-col items-center justify-center p-2 bg-yellow-50 dark:bg-yellow-900/10 border border-yellow-200 dark:border-yellow-800/50 rounded-xl text-center">
-                    <span className="text-xs font-bold text-slate-500 dark:text-slate-400 mb-0.5">SSR (5★)</span>
-                    <span className="text-xl font-black text-yellow-600 dark:text-yellow-400 leading-none">{records[5]}</span>
+                  <div className="flex flex-col items-center justify-center p-2 bg-yellow-900/10 border border-yellow-800/50 rounded-xl text-center">
+                    <span className="text-xs font-bold text-slate-400 mb-0.5">SSR (5★)</span>
+                    <span className="text-xl font-black text-yellow-400 leading-none">{records[5]}</span>
                   </div>
 
                   {/* 4-Star Record */}
-                  <div className="flex flex-col items-center justify-center p-2 bg-purple-50 dark:bg-purple-900/10 border border-purple-200 dark:border-purple-800/50 rounded-xl text-center">
-                    <span className="text-xs font-bold text-slate-500 dark:text-slate-400 mb-0.5">SR (4★)</span>
-                    <span className="text-xl font-black text-purple-600 dark:text-purple-400 leading-none">{records[4]}</span>
+                  <div className="flex flex-col items-center justify-center p-2 bg-purple-900/10 border border-purple-800/50 rounded-xl text-center">
+                    <span className="text-xs font-bold text-slate-400 mb-0.5">SR (4★)</span>
+                    <span className="text-xl font-black text-purple-400 leading-none">{records[4]}</span>
                   </div>
                 </div>
               </div>
@@ -254,12 +254,11 @@ export default function Game() {
       {pullResults && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8 bg-slate-950/90 backdrop-blur-xl transition-opacity animate-in fade-in duration-300">
           
-          {/* PERBAIKAN DI SINI: Tambahkan max-h-[90vh], overflow-y-auto, dan py-4 */}
           <div className="w-full max-w-5xl flex flex-col items-center max-h-[90vh] overflow-y-auto py-4 scrollbar-smooth">
             
             <div className="w-full flex justify-between items-center mb-8 px-4 mt-2">
               <h3 className="text-xl md:text-2xl font-black text-white uppercase tracking-widest flex items-center gap-3">
-                <Sparkles className="text-teal-400" /> Warp Results
+                <Sparkles className="text-amber-400" /> Warp Results
               </h3>
               <button 
                 onClick={() => setPullResults(null)} 
@@ -295,7 +294,6 @@ export default function Game() {
               ))}
             </div>
 
-            {/* Tambahan mb-4 agar ada jarak saat di-scroll sampai bawah */}
             <button 
               onClick={() => setPullResults(null)}
               className="mt-10 mb-4 px-10 py-3.5 bg-white hover:bg-slate-200 text-slate-900 font-extrabold rounded-full transition shadow-xl hover:scale-105"

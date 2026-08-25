@@ -3,12 +3,12 @@ import { Layers, BrainCircuit, Network, Eye, MessageSquareText, Coffee, Database
 import Reveal from './Reveal';
 
 const themeClasses = {
-  cyan: "hover:bg-cyan-50 dark:hover:bg-cyan-900/40 hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(6,182,212,0.5)]",
-  emerald: "hover:bg-emerald-50 dark:hover:bg-emerald-900/40 hover:border-emerald-400 hover:shadow-[0_0_20px_rgba(16,185,129,0.5)]",
-  purple: "hover:bg-purple-50 dark:hover:bg-purple-900/40 hover:border-purple-400 hover:shadow-[0_0_20px_rgba(168,85,247,0.5)]",
-  blue: "hover:bg-blue-50 dark:hover:bg-blue-900/40 hover:border-blue-400 hover:shadow-[0_0_20px_rgba(59,130,246,0.5)]",
-  amber: "hover:bg-amber-50 dark:hover:bg-amber-900/40 hover:border-amber-400 hover:shadow-[0_0_20px_rgba(245,158,11,0.5)]",
-  rose: "hover:bg-rose-50 dark:hover:bg-rose-900/40 hover:border-rose-400 hover:shadow-[0_0_20px_rgba(244,63,94,0.5)]"
+  cyan: "border-2 border-cyan-400 dark:border-cyan-500 hover:bg-cyan-50 dark:hover:bg-cyan-900/40 hover:shadow-[0_0_20px_rgba(6,182,212,0.5)]",
+  emerald: "border-2 border-emerald-400 dark:border-emerald-500 hover:bg-emerald-50 dark:hover:bg-emerald-900/40 hover:shadow-[0_0_20px_rgba(16,185,129,0.5)]",
+  purple: "border-2 border-purple-400 dark:border-purple-500 hover:bg-purple-50 dark:hover:bg-purple-900/40 hover:shadow-[0_0_20px_rgba(168,85,247,0.5)]",
+  blue: "border-2 border-blue-400 dark:border-blue-500 hover:bg-blue-50 dark:hover:bg-blue-900/40 hover:shadow-[0_0_20px_rgba(59,130,246,0.5)]",
+  amber: "border-2 border-amber-400 dark:border-amber-500 hover:bg-amber-50 dark:hover:bg-amber-900/40 hover:shadow-[0_0_20px_rgba(245,158,11,0.5)]",
+  rose: "border-2 border-rose-400 dark:border-rose-500 hover:bg-rose-50 dark:hover:bg-rose-900/40 hover:shadow-[0_0_20px_rgba(244,63,94,0.5)]"
 };
 
 const lucideColors = {
@@ -73,7 +73,7 @@ const skillsData = [
       { name: "GitHub", icon: "custom:github" },
       { name: "VS Code", icon: "custom:vscode" },
       { name: "Figma", icon: "figma" },
-      { name: "Canva", icon: "custom:canva" }, // Menggunakan custom SVG agar aman
+      { name: "Canva", icon: "custom:canva" }, 
       { name: "Hugging Face", icon: "huggingface" },
       { name: "XAMPP", icon: "xampp" },
       { name: "Kaggle", icon: "kaggle" },
@@ -147,8 +147,8 @@ export default function Skills() {
         <Reveal>
           
           <div className="flex items-center gap-3 mb-8">
-            <Layers className="text-teal-500" size={28} />
-            <h2 className="text-3xl font-bold">Skills</h2>
+            <Layers className="text-orange-500" size={28} />
+            <h2 className="text-3xl font-bold text-slate-900 dark:text-white">Skills</h2>
           </div>
 
           <div className="space-y-8">
@@ -162,7 +162,7 @@ export default function Skills() {
                   {section.items.map((skill) => (
                     <div 
                       key={skill.name} 
-                      className={`group relative hover:z-10 px-4 py-2.5 bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-700 rounded-xl text-sm font-semibold text-slate-700 dark:text-slate-300 transition-all duration-300 shadow-sm cursor-default flex items-center gap-2 hover:scale-110 hover:-translate-y-1 hover:text-slate-900 dark:hover:text-white ${themeClasses[section.theme]}`}
+                      className={`group relative hover:z-10 px-4 py-2.5 bg-white dark:bg-[#111827] rounded-xl text-sm font-semibold text-slate-700 dark:text-slate-300 transition-all duration-300 shadow-sm cursor-default flex items-center gap-2 hover:scale-110 hover:-translate-y-1 hover:text-slate-900 dark:hover:text-white ${themeClasses[section.theme]}`}
                     >
                       <RenderIcon iconName={skill.icon} theme={section.theme} />
                       <span>{skill.name}</span>

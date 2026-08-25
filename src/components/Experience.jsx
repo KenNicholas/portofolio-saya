@@ -10,9 +10,9 @@ export default function Experience() {
       title: "Bachelor of Computer Science",
       organization: "BINUS University",
       date: "Sep 2024",
-      icon: <GraduationCap size={20} className="text-blue-500" />,
-      color: "border-blue-500",
-      bgIcon: "bg-blue-100 dark:bg-blue-900/30",
+      icon: <GraduationCap size={20} className="text-orange-500" />,
+      color: "border-orange-500",
+      bgIcon: "bg-orange-100 dark:bg-orange-900/30",
       desc: "Began undergraduate studies in Computer Science. Built a strong foundation in algorithms, data structures, and software engineering principles.",
       highlight: "Cumulative GPA: 3.91 / 4.00"
     },
@@ -79,45 +79,46 @@ export default function Experience() {
         <Reveal>
           
           <div className="flex items-center gap-3 mb-12">
-            <GraduationCap className="text-blue-500" size={32} />
+            <GraduationCap className="text-orange-500" size={32} />
             <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white">Education & Milestones</h2>
           </div>
 
-          <div className="relative border-l-2 border-slate-200 dark:border-slate-800 ml-4 md:ml-6 space-y-12">
+          <div className="relative border-l-2 border-orange-300 dark:border-slate-800 ml-4 md:ml-6 space-y-12">
             
             {milestones.map((item, index) => (
               <div key={item.id} className="relative pl-8 md:pl-12 group">
                 
-                <div className={`absolute -left-[21px] top-1 w-10 h-10 rounded-full border-4 border-white dark:border-[#0d1320] flex items-center justify-center ${item.bgIcon} ${item.color} shadow-sm group-hover:scale-110 transition-transform duration-300`}>
+                <div className={`absolute -left-[21px] top-1 w-10 h-10 rounded-full border-4 border-amber-100 dark:border-[#0d1320] flex items-center justify-center ${item.bgIcon} ${item.color} shadow-sm group-hover:scale-110 transition-transform duration-300`}>
                   {item.icon}
                 </div>
 
-                <div className="bg-white dark:bg-[#111827] border border-slate-200 dark:border-slate-800 p-6 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 hover:border-teal-500/50 dark:hover:border-teal-500/50">
+                <div className="bg-gradient-to-br from-orange-100 to-amber-100 dark:bg-[#111827] dark:bg-none border-2 border-amber-400 dark:border dark:border-slate-800 p-6 rounded-2xl shadow-lg dark:shadow-sm hover:shadow-[0_0_25px_rgba(245,158,11,0.5)] dark:hover:shadow-[0_0_25px_rgba(245,158,11,0.2)] transition-all duration-300 hover:border-orange-500 dark:hover:border-orange-500/50">
                   
                   <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-2">
-                    <span className="text-xs font-black uppercase tracking-wider text-slate-400">
+                    <span className="text-xs font-black uppercase tracking-wider text-orange-700/70 dark:text-slate-400">
                       {item.type}
                     </span>
-                    <span className="flex items-center gap-1.5 text-xs font-bold text-teal-600 dark:text-teal-400 bg-teal-50 dark:bg-teal-900/20 px-3 py-1 rounded-full w-max">
+                    <span className="flex items-center gap-1.5 text-xs font-bold text-orange-800 dark:text-amber-400 bg-white/60 dark:bg-orange-900/20 border border-orange-200 dark:border-transparent px-3 py-1 rounded-full w-max">
                       <Calendar size={12} /> {item.date}
                     </span>
                   </div>
 
-                  <h3 className="text-xl font-extrabold text-slate-900 dark:text-white mb-1">
+                  <h3 className="text-xl font-extrabold text-orange-900 dark:text-white mb-1">
                     {item.title}
                   </h3>
                   
-                  <p className="text-sm font-bold text-blue-600 dark:text-blue-400 mb-4">
+                  <p className="text-sm font-bold text-orange-700 dark:text-amber-400 mb-4">
                     {item.organization}
                   </p>
                   
-                  <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed text-justify">
+                  <p className="text-sm text-orange-950/80 dark:text-slate-400 leading-relaxed text-justify font-medium dark:font-normal">
                     {item.desc}
                   </p>
 
+                  {/* Komentar dipindah ke luar blok kondisional agar tidak memecahkan parser Vite */}
                   {item.highlight && (
-                    <div className="mt-5 inline-block px-4 py-2 bg-gradient-to-r from-blue-50 to-teal-50 dark:from-blue-900/20 dark:to-teal-900/20 border border-blue-200 dark:border-blue-800/50 rounded-lg">
-                      <span className="text-sm font-black text-slate-800 dark:text-white flex items-center gap-2">
+                    <div className="mt-5 inline-block px-4 py-2 bg-white/50 dark:bg-gradient-to-r dark:from-orange-900/20 dark:to-amber-900/20 border-2 border-orange-300 dark:border dark:border-amber-800/50 rounded-lg">
+                      <span className="text-sm font-bold dark:font-black text-orange-900 dark:text-white flex items-center gap-2">
                         🌟 {item.highlight}
                       </span>
                     </div>

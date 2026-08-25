@@ -11,7 +11,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer'; 
 
 const Divider = () => (
-  <div className="w-[85%] max-w-6xl mx-auto h-px bg-slate-200 dark:bg-slate-800/80 my-4"></div>
+  <div className="w-[85%] max-w-6xl mx-auto h-px bg-orange-200/50 dark:bg-slate-800/80 my-4"></div>
 );
 
 export default function App() {
@@ -26,10 +26,11 @@ export default function App() {
   }, [darkMode]);
 
   return (
-    <div className="relative overflow-x-hidden">
+    <div className="relative overflow-x-hidden bg-[#FCF9F2] dark:bg-[#0a0f1a] text-slate-900 dark:text-white min-h-screen transition-colors duration-300">
       <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
       <main>
         <Hero />
+        <Divider />
         <About />
         <Divider />
         <Experience />
