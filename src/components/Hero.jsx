@@ -1,7 +1,6 @@
 import React from 'react';
 import { Mail, Download, Sparkles } from 'lucide-react';
 import Reveal from './Reveal'; 
-import profilePic from '../assets/Hero/profile.jpeg';
 
 const GithubIcon = ({ size = 24, className = "" }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.2c3-.3 6-1.5 6-7a5.2 5.2 0 0 0-1.5-3.8 4.6 4.6 0 0 0-.1-3.8s-1.2-.4-3.9 1.4a12.8 12.8 0 0 0-7 0C6.2 2 5 2 5 2a4.6 4.6 0 0 0-.1 3.8A5.2 5.2 0 0 0 3 9.6c0 5.5 3 6.7 6 7a4.8 4.8 0 0 0-1 3.2v4"></path></svg>
@@ -78,9 +77,9 @@ export default function Hero() {
                 <div className="absolute -inset-2 bg-gradient-to-tr from-teal-500 to-blue-600 rounded-3xl blur-xl opacity-40 group-hover:opacity-70 animate-pulse transition duration-500" />
                 <div className="relative aspect-square w-full rounded-3xl overflow-hidden border-2 border-slate-700 bg-slate-900 shadow-2xl">
                   <img 
-                    src={profilePic} 
+                    src="/assets/Hero/profile.jpeg" 
                     alt="Ken Nicholas Latif" 
-                    className="w-full h-full object-cover object-center group-hover:sepia group-hover:scale-105 transition-all duration-500"
+                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-all duration-500"
                   />
                 </div>
               </div>

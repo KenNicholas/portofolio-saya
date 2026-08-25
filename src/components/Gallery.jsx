@@ -34,6 +34,7 @@ export default function Gallery() {
     { id: 20, title: "Aesthetic Cafe Coding", category: "Daily", date: "2026", desc: "Changing environment for a fresh burst of creative momentum.", img: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=800&auto=format&fit=crop&sig=20" }
   ];
 
+  // Kamu bisa mencoba menambahkan "Future" atau "Empty" di sini untuk menguji status kosongnya
   const categories = ['All', 'Daily', 'Travel', 'Gaming', 'Achievement', 'Others'];
 
   const filteredGallery = activeCategory === 'All' 
@@ -106,59 +107,74 @@ export default function Gallery() {
 
           <div className="relative group">
             
-            {/* Left arrow  */}
-            {showLeftArrow && (
-              <button 
-                onClick={() => scroll('left')}
-                className="absolute -left-5 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-white/90 dark:bg-[#1e2029]/90 backdrop-blur-md border border-slate-200 dark:border-slate-700 rounded-full flex items-center justify-center text-slate-700 dark:text-white shadow-xl hover:bg-teal-500 hover:text-white hover:border-teal-500 transition-all duration-300 hover:scale-110"
-                aria-label="Scroll Left"
-              >
-                <ChevronLeft size={24} />
-              </button>
-            )}
+            {/* Cek apakah ada foto atau kosong */}
+            {filteredGallery.length === 0 ? (
+              
+              /* Tampilan Status Kosong (Empty State) - TANPA BOX */
+              <div className="w-full flex flex-col items-center justify-center h-[280px] md:h-[320px] animate-in fade-in duration-500">
+                <Camera size={48} className="text-slate-300 dark:text-slate-600 mb-4 opacity-60" />
+                <span className="text-slate-400 dark:text-slate-500 font-extrabold uppercase tracking-[0.2em] text-sm">To be added...</span>
+              </div>
+              
+            ) : (
+              
+              /* Tampilan Galeri Normal dengan Panah */
+              <>
+                {/* Left arrow */}
+                {showLeftArrow && (
+                  <button 
+                    onClick={() => scroll('left')}
+                    className="absolute -left-5 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-white/90 dark:bg-[#1e2029]/90 backdrop-blur-md border border-slate-200 dark:border-slate-700 rounded-full flex items-center justify-center text-slate-700 dark:text-white shadow-xl hover:bg-teal-500 hover:text-white hover:border-teal-500 transition-all duration-300 hover:scale-110"
+                    aria-label="Scroll Left"
+                  >
+                    <ChevronLeft size={24} />
+                  </button>
+                )}
 
-            <div 
-              ref={scrollRef}
-              className="flex gap-6 overflow-x-auto pb-4 pt-2 scrollbar-thin scrollbar-thumb-slate-300 dark:scrollbar-thumb-slate-700 scroll-smooth"
-            >
-              {filteredGallery.map((item) => (
                 <div 
-                  key={item.id}
-                  onClick={() => setSelectedImage(item)}
-                  className="snap-start shrink-0 w-[280px] md:w-[320px] aspect-[4/3] md:aspect-square bg-white dark:bg-[#111827] rounded-2xl overflow-hidden border-2 border-slate-200 dark:border-slate-800 cursor-pointer transition-all duration-500 hover:scale-[1.03] hover:border-teal-400 dark:hover:border-teal-500 hover:shadow-[0_0_30px_rgba(20,184,166,0.4)] relative group/card flex flex-col"
+                  ref={scrollRef}
+                  className="flex gap-6 overflow-x-auto pb-4 pt-2 scrollbar-thin scrollbar-thumb-slate-300 dark:scrollbar-thumb-slate-700 scroll-smooth"
                 >
-                  <div className="w-full h-full overflow-hidden relative">
-                    <img 
-                      src={item.img} 
-                      alt={item.title} 
-                      className="w-full h-full object-cover group-hover/card:scale-110 transition-transform duration-700" 
-                    />
-                    
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5">
-                      <div className="flex flex-wrap items-center gap-2 mb-2">
-                        <span className="px-3 py-0.5 bg-teal-500 text-white rounded-full text-xs font-bold">
-                          {item.category}
-                        </span>
-                        <span className="px-3 py-0.5 bg-slate-700/80 backdrop-blur-md text-slate-200 rounded-full text-xs font-bold border border-slate-600">
-                          Taken on: {item.date}
-                        </span>
+                  {filteredGallery.map((item) => (
+                    <div 
+                      key={item.id}
+                      onClick={() => setSelectedImage(item)}
+                      className="snap-start shrink-0 w-[280px] md:w-[320px] aspect-[4/3] md:aspect-square bg-white dark:bg-[#111827] rounded-2xl overflow-hidden border-2 border-slate-200 dark:border-slate-800 cursor-pointer transition-all duration-500 hover:scale-[1.03] hover:border-teal-400 dark:hover:border-teal-500 hover:shadow-[0_0_30px_rgba(20,184,166,0.4)] relative group/card flex flex-col"
+                    >
+                      <div className="w-full h-full overflow-hidden relative">
+                        <img 
+                          src={item.img} 
+                          alt={item.title} 
+                          className="w-full h-full object-cover group-hover/card:scale-110 transition-transform duration-700" 
+                        />
+                        
+                        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5">
+                          <div className="flex flex-wrap items-center gap-2 mb-2">
+                            <span className="px-3 py-0.5 bg-teal-500 text-white rounded-full text-xs font-bold">
+                              {item.category}
+                            </span>
+                            <span className="px-3 py-0.5 bg-slate-700/80 backdrop-blur-md text-slate-200 rounded-full text-xs font-bold border border-slate-600">
+                              Taken on: {item.date}
+                            </span>
+                          </div>
+                          <h3 className="text-white font-extrabold text-base line-clamp-1">{item.title}</h3>
+                        </div>
                       </div>
-                      <h3 className="text-white font-extrabold text-base line-clamp-1">{item.title}</h3>
                     </div>
-                  </div>
+                  ))}
                 </div>
-              ))}
-            </div>
 
-            {/* Right arrow */}
-            {showRightArrow && (
-              <button 
-                onClick={() => scroll('right')}
-                className="absolute -right-5 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-white/90 dark:bg-[#1e2029]/90 backdrop-blur-md border border-slate-200 dark:border-slate-700 rounded-full flex items-center justify-center text-slate-700 dark:text-white shadow-xl hover:bg-teal-500 hover:text-white hover:border-teal-500 transition-all duration-300 hover:scale-110"
-                aria-label="Scroll Right"
-              >
-                <ChevronRight size={24} />
-              </button>
+                {/* Right arrow */}
+                {showRightArrow && (
+                  <button 
+                    onClick={() => scroll('right')}
+                    className="absolute -right-5 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-white/90 dark:bg-[#1e2029]/90 backdrop-blur-md border border-slate-200 dark:border-slate-700 rounded-full flex items-center justify-center text-slate-700 dark:text-white shadow-xl hover:bg-teal-500 hover:text-white hover:border-teal-500 transition-all duration-300 hover:scale-110"
+                    aria-label="Scroll Right"
+                  >
+                    <ChevronRight size={24} />
+                  </button>
+                )}
+              </>
             )}
 
           </div>
@@ -166,7 +182,7 @@ export default function Gallery() {
         </Reveal>
       </div>
 
-      {/* Pop-up*/}
+      {/* Pop-up */}
       {selectedImage && (
         <div 
           className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md transition-opacity animate-in fade-in duration-300"
