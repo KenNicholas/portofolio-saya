@@ -364,7 +364,12 @@ export default function Projects() {
         "Vercel"
       ],
       images: [
-        "/assets/Projects/portofolio/portofolio (1).png"
+        "/assets/Projects/portofolio/portofolio1.png", 
+        "/assets/Projects/portofolio/portofolio2.png",
+        "/assets/Projects/portofolio/portofolio3.png",
+        "/assets/Projects/portofolio/portofolio4.png",
+        "/assets/Projects/portofolio/portofolio5.png",
+        "/assets/Projects/portofolio/portofolio6.png"
       ],
       demoUrl: "https://portofolio-saya-black-tau.vercel.app/", 
       codeUrl: "https://github.com/KenNicholas/portofolio-saya"

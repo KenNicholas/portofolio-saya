@@ -36,9 +36,11 @@ export default function Gallery() {
 
   const categories = ['All', 'Daily', 'Travel', 'Gaming', 'Achievement', 'Others'];
 
+  const reversedGalleryItems = [...galleryItems].reverse();
+
   const filteredGallery = activeCategory === 'All' 
-    ? galleryItems 
-    : galleryItems.filter(item => item.category === activeCategory);
+    ? reversedGalleryItems 
+    : reversedGalleryItems.filter(item => item.category === activeCategory);
 
   const checkScrollPosition = () => {
     if (scrollRef.current) {
@@ -107,15 +109,11 @@ export default function Gallery() {
           <div className="relative group">
             
             {filteredGallery.length === 0 ? (
-              
-              /* Empty State */
               <div className="w-full flex flex-col items-center justify-center h-[280px] md:h-[320px] animate-in fade-in duration-500">
                 <Camera size={48} className="text-slate-300 dark:text-slate-600 mb-4 opacity-60" />
                 <span className="text-slate-400 dark:text-slate-500 font-extrabold uppercase tracking-[0.2em] text-sm">To be added...</span>
               </div>
-              
             ) : (
-              
               <>
                 {/* Left arrow */}
                 {showLeftArrow && (
