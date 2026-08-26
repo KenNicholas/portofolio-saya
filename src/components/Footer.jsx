@@ -26,7 +26,7 @@ export default function Footer() {
             <div className="flex items-center gap-1.5 font-bold text-xl text-orange-950 dark:text-white">
               <div className="w-3 h-3 rounded-full bg-amber-500"></div>
               <div className="w-3 h-3 rounded-full bg-orange-500"></div>
-              <span className="ml-2 font-mono tracking-tight">Ken.Dev</span>
+              <span className="ml-2 font-mono tracking-tight">KenKen</span>
             </div>
             <p className="text-sm text-orange-900/80 dark:text-slate-400 leading-relaxed font-medium dark:font-normal">
               Designing and building intelligent systems, exploring modern tech, and crafting seamless user experiences.
@@ -104,7 +104,7 @@ export default function Footer() {
 
         {/* Copyright */}
         <div className="pt-8 border-t border-amber-300/60 dark:border-slate-800 flex flex-col md:flex-row items-center justify-between gap-4 text-xs font-semibold text-orange-900/80 dark:text-slate-400">
-          <p>© {currentYear} Ken.Dev. All rights reserved.</p>
+          <p>© {currentYear} KenKen. All rights reserved.</p>
           <p className="flex items-center gap-1.5">
             Built using React & TailwindCSS.
           </p>

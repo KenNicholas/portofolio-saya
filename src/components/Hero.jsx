@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, Download, Sparkles } from 'lucide-react';
+import { Mail, Download, Sparkles, FileText } from 'lucide-react'; // Tambah FileText icon
 import Reveal from './Reveal'; 
 
 const GithubIcon = ({ size = 24, className = "" }) => (
@@ -41,7 +41,6 @@ export default function Hero() {
               </div>
               
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-                {/* Email diubah ke tema Orens agar selaras */}
                 <a href="mailto:kennicholas89@gmail.com" className="flex flex-col p-4 rounded-2xl bg-gradient-to-br from-orange-50/50 to-amber-50/50 dark:from-orange-900/20 dark:to-amber-900/20 border-2 border-orange-400/60 dark:border-orange-800/60 hover:from-orange-500 hover:to-rose-500 dark:hover:from-orange-500 dark:hover:to-rose-500 hover:-translate-y-1 hover:border-transparent transition-all duration-500 group shadow-sm">
                   <Mail size={24} className="text-orange-600 dark:text-orange-400 group-hover:text-white mb-3 transition-colors duration-500" />
                   <span className="font-bold text-slate-900 dark:text-white text-sm group-hover:text-white transition-colors duration-500">Email</span>
@@ -61,14 +60,25 @@ export default function Hero() {
                 </a>
               </div>
 
-              <div className="pt-2">
+              {/* download and view buttons */}
+              <div className="pt-2 flex flex-wrap gap-4">
                 <a 
                   href="/CV_Ken_Nicholas.pdf" 
-                  download 
-                  className="group inline-flex items-center gap-2 px-8 py-3.5 bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-400 hover:to-orange-500 hover:shadow-xl hover:shadow-orange-500/40 hover:-translate-y-1 text-white font-bold rounded-xl transition-all duration-300"
+                  download="CV_Ken_Nicholas.pdf"
+                  className="group inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-400 hover:to-orange-500 hover:shadow-xl hover:shadow-orange-500/40 hover:-translate-y-1 text-white font-bold rounded-xl transition-all duration-300"
                 >
                   <Download size={18} className="group-hover:-translate-y-0.5 transition-transform" /> 
                   Download CV
+                </a>
+
+                <a 
+                  href="/CV_Ken_Nicholas.pdf" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-gradient-to-r from-pink-500 to-rose-600 hover:from-pink-400 hover:to-rose-500 hover:shadow-xl hover:shadow-pink-500/40 hover:-translate-y-1 text-white font-bold rounded-xl transition-all duration-300"
+                >
+                  <FileText size={18} className="group-hover:-translate-y-0.5 transition-transform" /> 
+                  View CV
                 </a>
               </div>
 

@@ -12,30 +12,170 @@ export default function Gallery() {
   const scrollRef = useRef(null);
 
   const galleryItems = [
-    { id: 1, title: "Workspace & Late Night Coding", category: "Daily", date: "2026", desc: "The usual setup where logic meets execution. Late-night debugging sessions with a cup of coffee.", img: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop&sig=1" },
-    { id: 2, title: "Epic Gacha Pull Moment", category: "Gaming", date: "2026", desc: "When the RNG gods finally bless the account after weeks of saving pulling currency!", img: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=800&auto=format&fit=crop&sig=2" },
-    { id: 3, title: "Weekend Nature Escape", category: "Travel", date: "2025", desc: "Stepping away from the screen to clear the mind and touch some grass.", img: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=800&auto=format&fit=crop&sig=3" },
-    { id: 4, title: "Tech Conference Presentation", category: "Achievement", date: "2026", desc: "Presenting research paper findings at the technology conference. Nerves turning into excitement.", img: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?q=80&w=800&auto=format&fit=crop&sig=4" },
-    { id: 5, title: "Casual Reading & Strategy Time", category: "Daily", date: "2025", desc: "Diving into system architecture books or analyzing complex RPG narrative lore.", img: "https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=800&auto=format&fit=crop&sig=5" },
-    { id: 6, title: "City Lights & Night Walk", category: "Travel", date: "2025", desc: "Finding inspiration in urban geometry and city lighting after a long day of coding.", img: "https://images.unsplash.com/photo-1519501025264-65ba15a82390?q=80&w=800&auto=format&fit=crop&sig=6" },
-    { id: 7, title: "Debugging Marathons", category: "Daily", date: "2026", desc: "Tracing memory leaks and optimizing backend queries until 3 AM.", img: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=800&auto=format&fit=crop&sig=7" },
-    { id: 8, title: "SSR / Limited Banner Victory", category: "Gaming", date: "2026", desc: "Won the 50/50 early pity! Pure satisfaction.", img: "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=800&auto=format&fit=crop&sig=8" },
-    { id: 9, title: "Mountain Hiking Trip", category: "Travel", date: "2024", desc: "Reaching the peak just in time for sunrise.", img: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=800&auto=format&fit=crop&sig=9" },
-    { id: 10, title: "Dean's List Award", category: "Achievement", date: "2025", desc: "Recognition for consistent academic performance during the semester.", img: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=800&auto=format&fit=crop&sig=10" },
-    { id: 11, title: "Dual Monitor Clean Setup", category: "Daily", date: "2026", desc: "Keeping cables tidy and workspace minimalist for maximum productivity.", img: "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?q=80&w=800&auto=format&fit=crop&sig=11" },
-    { id: 12, title: "Co-op Boss Raid Success", category: "Gaming", date: "2025", desc: "Executing a flawless teamwork rotation with friends to clear the hardest endgame content.", img: "https://images.unsplash.com/photo-1538481199705-c710c4e965fc?q=80&w=800&auto=format&fit=crop&sig=12" },
-    { id: 13, title: "Historic Old Town Walk", category: "Travel", date: "2024", desc: "Appreciating historical architecture and local culinary spots.", img: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?q=80&w=800&auto=format&fit=crop&sig=13" },
-    { id: 14, title: "Published Research Certificate", category: "Achievement", date: "2026", desc: "Official acknowledgement of paper acceptance in the conference committee.", img: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=800&auto=format&fit=crop&sig=14" },
-    { id: 15, title: "Morning Coffee Brew", category: "Daily", date: "2026", desc: "Manual pour-over coffee ritual before compiling code.", img: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=800&auto=format&fit=crop&sig=15" },
-    { id: 16, title: "Max Level Character Showcase", category: "Gaming", date: "2026", desc: "Fully built character with god-roll artifacts and signature weapon.", img: "https://images.unsplash.com/photo-1612287233002-b1d0ba12c7c0?q=80&w=800&auto=format&fit=crop&sig=16" },
-    { id: 17, title: "Beach Sunset Reflection", category: "Travel", date: "2025", desc: "Listening to waves crash while brainstorming the next software architecture.", img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=800&auto=format&fit=crop&sig=17" },
-    { id: 18, title: "Hackathon Finalist", category: "Achievement", date: "2025", desc: "Building a working prototype within 24 hours under extreme pressure.", img: "https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=800&auto=format&fit=crop&sig=18" },
-    { id: 19, title: "Bookshelf Tour", category: "Daily", date: "2025", desc: "Sci-fi novels, algorithms textbooks, and design pattern references.", img: "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=800&auto=format&fit=crop&sig=19" },
-    { id: 20, title: "Aesthetic Cafe Coding", category: "Daily", date: "2026", desc: "Changing environment for a fresh burst of creative momentum.", img: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=800&auto=format&fit=crop&sig=20" }
-  ];
-
-  const categories = ['All', 'Daily', 'Travel', 'Gaming', 'Achievement', 'Others'];
-
+      { 
+        id: 1, 
+        title: "Practicing 3-Point Perspective 📐", 
+        category: "Education", 
+        date: "2024", 
+        desc: "Practicing 3-point perspective for my high school art class! ✏️ Sketching this shape on paper was a bit of a headache, but luckily, with my teacher's guidance, I managed to pull it off. It’s super satisfying once you see the final result!",
+        img: "https://res.cloudinary.com/ymf0yzh1/image/upload/v1787714840/1.jpg" 
+      },
+      { 
+        id: 7, 
+        title: "Finally Got Meg! 🤖", 
+        category: "Gaming", 
+        date: "2024", 
+        desc: "Finally got a new legendary brawler for my account in Brawl Stars! Super hyped because he's exactly the one I wanted 🎉. Time to climb the ranks! 🤖🔥", 
+        img: "https://res.cloudinary.com/ymf0yzh1/image/upload/v1787714835/7.png" 
+      },
+      { 
+        id: 9, 
+        title: "Realistic Momogi Sketch ✏️", 
+        category: "Daily", 
+        date: "2024", 
+        desc: "Realistic drawing practice in art class. Sketched a crumpled Momogi wrapper using nothing but a trusty 2B pencil 🖍️. Pretty proud of the shading here! 🍫", 
+        img: "https://res.cloudinary.com/ymf0yzh1/image/upload/v1787714832/9.jpg" 
+      },
+      { 
+        id: 12, 
+        title: "Cubism Giraffe Canvas 🦒", 
+        category: "Education", 
+        date: "2024", 
+        desc: "Painting on canvas using brushes and watercolors! Went for a fun cubism style with unnatural, vibrant colors to make this giraffe pop! 🎨✨", 
+        img: "https://res.cloudinary.com/ymf0yzh1/image/upload/v1787714829/12.jpg" 
+      },
+      { 
+        id: 13, 
+        title: "Midnight Reflection Exam 🌙", 
+        category: "Achievement", 
+        date: "2024", 
+        desc: "My final practical exam for high school art class! A watercolor canvas featuring a glowing moon, mountains, a creepy old tree, and a field of white flowers reflecting on a midnight lake 🌙✨.", 
+        img: "https://res.cloudinary.com/ymf0yzh1/image/upload/v1787714838/4.jpg" 
+      },
+      { 
+        id: 14, 
+        title: "Gokart Racing! 🏎️", 
+        category: "Travel", 
+        date: "2024", 
+        desc: "Having an absolute blast riding go-karts at a recreation spot in Bandung with the family. Adrenaline rush and good times! 🏁", 
+        img: "https://res.cloudinary.com/ymf0yzh1/image/upload/v1787714827/14.jpg" 
+      },
+      { 
+        id: 20, 
+        title: "Insane Gacha Luck in HSR 🌟!", 
+        category: "Gaming", 
+        date: "2025", 
+        desc: "Pulled on the 5-star banner in Honkai: Star Rail and got crazy lucky! Scooped up two 5-stars along with the signature weapon. The RNG gods smiled upon me today! 🚂✨", 
+        img: "https://res.cloudinary.com/ymf0yzh1/image/upload/v1787714956/20.jpg" 
+      },
+      { 
+        id: 21, 
+        title: "Crow Mastery Complete 🐦‍⬛", 
+        category: "Gaming", 
+        date: "2025", 
+        desc: "Caw caw! 🐦‍⬛ Finally unlocked a new player title for my Brawl Stars account by completely maxing out Crow's mastery. 'Caw caw!' badge secured! The grind was totally worth it! 🏆", 
+        img: "https://res.cloudinary.com/ymf0yzh1/image/upload/v1787714959/21.png" 
+      },
+      { 
+        id: 22, 
+        title: "Scientific Computing Lab with Python 🐍", 
+        category: "Education", 
+        date: "2025", 
+        desc: "Diving deep into Python to code some linear regression for my Scientific Computing class. Plotting data points and finding that perfect line of best fit! While a lot of errors occurred, a successful run is so satisfying! 💻📈", 
+        img: "https://res.cloudinary.com/ymf0yzh1/image/upload/v1787714961/22.jpg" 
+      },
+      { 
+        id: 25, 
+        title: "Crushing the AOL Project 🖥️", 
+        category: "Achievement", 
+        date: "2025", 
+        desc: "Finally done wrapping up the AOL assignment! 😮‍💨 Built a solid CLI menu system that can process CSV data to display, search, and sort data. Always satisfying to see the code run flawlessly without errors 🚀. Time to rest! ☕", 
+        img: "https://res.cloudinary.com/ymf0yzh1/image/upload/v1787714964/25.jpg" 
+      },
+      { 
+        id: 26, 
+        title: "Sweet Taste of Victory 🏆", 
+        category: "Achievement", 
+        date: "2025", 
+        desc: "Won a mini-competition after putting in a heavy sacrifice. The prize? Two massive boxes of snacks for the team. Time to feast! 🍿😋", 
+        img: "https://res.cloudinary.com/ymf0yzh1/image/upload/v1787714966/26.jpg" 
+      },
+      { 
+        id: 28, 
+        title: "Mango Ice Cream Delight 🥭", 
+        category: "Daily", 
+        date: "2025", 
+        desc: "Treating myself to some delicious mango ice cream topped with sweet and colorful jelly. The absolute perfect dessert to cool down and relax! 🍧", 
+        img: "https://res.cloudinary.com/ymf0yzh1/image/upload/v1787714969/28.jpg" 
+      },
+      { 
+        id: 31, 
+        title: "My Endfield Factory ⚙️", 
+        category: "Gaming", 
+        date: "2026", 
+        desc: "Showing off my perfectly optimized factory layout in Arknights: Endfield. Maximum efficiency is the only way to play! 🏭😎", 
+        img: "https://res.cloudinary.com/ymf0yzh1/image/upload/v1787715009/31.jpg" 
+      },
+      { 
+        id: 33, 
+        title: "Jurassic Vibes in Bandung 🦖", 
+        category: "Travel", 
+        date: "2026", 
+        desc: "Taking a quick snap with a massive dinosaur fossil display at a recreation park in Bandung. Rawr! 🦕📸", 
+        img: "https://res.cloudinary.com/ymf0yzh1/image/upload/v1787715014/33.jpg" 
+      },
+      { 
+        id: 37, 
+        title: "Hatsune Miku Secured! 🎤", 
+        category: "Gaming", 
+        date: "2026", 
+        desc: "Let's go! Managed to pull Hatsune Miku AND her signature weapon in Persona 5: The Phantom X (P5X). The gacha luck strikes again! 🎯 🎤🎵", 
+        img: "https://res.cloudinary.com/ymf0yzh1/image/upload/v1787715021/37.jpg" 
+      },
+      { 
+        id: 38, 
+        title: "All Aboard to Jogja 🚂", 
+        category: "Travel", 
+        date: "2026", 
+        desc: "Getting ready to depart for Yogyakarta. Bracing myself for a long but exciting 7-hour train ride ahead! 🎒✌️", 
+        img: "https://res.cloudinary.com/ymf0yzh1/image/upload/v1787715022/38.jpg" 
+      },
+      { 
+        id: 41, 
+        title: "Hello, Jogja!", 
+        category: "Travel", 
+        date: "2026", 
+        desc: "Finally arrived in Jogja after a 7-hour train journey. So excited to explore the city built on memories and culinary delights! 🍜", 
+        img: "https://res.cloudinary.com/ymf0yzh1/image/upload/v1787715027/41.jpg" 
+      },
+      { 
+        id: 42, 
+        title: "Malioboro Night Stroll 🚶‍♂️", 
+        category: "Travel", 
+        date: "2026", 
+        desc: "Wandering around the street of Malioboro at night. The vibe here is incredibly lively with street food, people singing, dancing, and endless snacks to try! 🍢🎶", 
+        img: "https://res.cloudinary.com/ymf0yzh1/image/upload/v1787715028/42.jpg" 
+      },
+      { 
+        id: 46, 
+        title: "Huge Mall Aquarium 🐟", 
+        category: "Travel", 
+        date: "2026", 
+        desc: "Stumbled upon this massive indoor aquarium right inside the mall. Fascinating to just stand there and watch these giant fishes swimming around! 🐟🌊", 
+        img: "https://res.cloudinary.com/ymf0yzh1/image/upload/v1787715036/46.jpg" 
+      },
+      { 
+        id: 48, 
+        title: "Home Sweet Home 🏠", 
+        category: "Travel", 
+        date: "2026", 
+        desc: "Finally back home after an epic trip across Jogja and Semarang. Absolutely exhausted but its very satisfying! Time to lay flat on my bed! 😴🎒", 
+        img: "https://res.cloudinary.com/ymf0yzh1/image/upload/v1787715040/48.jpg" 
+      }
+    ];
+  
+  const categories = ['All', 'Daily', 'Education', 'Travel', 'Gaming', 'Achievement', 'Others'];
+  
   const reversedGalleryItems = [...galleryItems].reverse();
 
   const filteredGallery = activeCategory === 'All' 
@@ -134,7 +274,7 @@ export default function Gallery() {
                     <div 
                       key={item.id}
                       onClick={() => setSelectedImage(item)}
-                      className="snap-start shrink-0 w-[280px] md:w-[320px] aspect-[4/3] md:aspect-square bg-white dark:bg-slate-900 rounded-2xl overflow-hidden border-2 border-slate-200 dark:border-slate-800 cursor-pointer transition-all duration-500 hover:scale-[1.03] hover:border-amber-500 dark:hover:border-amber-500 hover:shadow-[0_0_25px_rgba(245,158,11,0.5)] relative group/card flex flex-col"
+                      className="snap-start shrink-0 w-[280px] md:w-[320px] aspect-[4/3] md:aspect-square bg-white dark:bg-slate-900 rounded-2xl overflow-hidden border-2 border-[#734128] dark:border-slate-800 cursor-pointer transition-all duration-500 hover:scale-[1.03] hover:border-amber-500 dark:hover:border-amber-500 hover:shadow-[0_0_25px_rgba(245,158,11,0.5)] relative group/card flex flex-col"
                     >
                       <div className="w-full h-full overflow-hidden relative">
                         <img 

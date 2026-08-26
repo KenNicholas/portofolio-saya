@@ -26,7 +26,7 @@ export default function App() {
   }, [darkMode]);
 
   return (
-    <div className="relative overflow-x-hidden bg-[#FCF9F2] dark:bg-[#0a0f1a] text-slate-900 dark:text-white min-h-screen transition-colors duration-300">
+    <div className="relative overflow-x-hidden bg-[#DCCEAC] dark:bg-[#0a0f1a] text-slate-900 dark:text-white min-h-screen transition-colors duration-300">
       <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
       <main>
         <Hero />

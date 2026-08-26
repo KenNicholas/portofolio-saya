@@ -611,8 +611,19 @@ export default function Projects() {
                 <h3 className="text-3xl md:text-4xl font-black mb-2 text-orange-950 dark:text-white tracking-tight leading-tight">
                   {selectedProject.title}
                 </h3>
-                <p className="text-amber-600 dark:text-amber-400 font-bold mb-6">{selectedProject.type}</p>
-                
+                <p className="text-amber-600 dark:text-amber-400 font-bold mb-4">{selectedProject.type}</p>
+                <h4 className="text-sm font-bold mb-2 text-orange-950 dark:text-white uppercase tracking-wider">Categories</h4>
+                <div className="flex flex-wrap items-center gap-2 mb-6">
+                  {selectedProject.categories.map(cat => (
+                    <span key={cat} className={`px-3 py-1 rounded-full text-xs font-bold ${tagColors[cat] || "bg-slate-100 text-slate-700"}`}>
+                      {cat}
+                    </span>
+                  ))}
+                  <span className="px-3 py-1 bg-white/70 dark:bg-slate-800 text-orange-900 dark:text-slate-400 rounded-full text-xs font-bold border-2 border-amber-300 dark:border-slate-700">
+                    Made in: {selectedProject.year}
+                  </span>
+                </div>
+
                 <h4 className="text-sm font-bold mb-2 text-orange-950 dark:text-white uppercase tracking-wider">About the Project</h4>
                 <p className="text-sm md:text-base text-orange-900/80 dark:text-slate-400 mb-8 leading-relaxed text-justify font-medium dark:font-normal">
                   {selectedProject.fullDesc}
