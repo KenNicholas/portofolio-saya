@@ -40,11 +40,10 @@ export default function Game() {
   
   const [records, setRecords] = useState({ 6: 0, 5: 0, 4: 0 });
 
-  // GACHA logic
   const handlePull = (amount) => {
     setIsPulling(true);
     
-    // Delay animation
+    // animation
     setTimeout(() => {
       let currentPity6 = pity6;
       let currentPity5 = pity5;
@@ -88,7 +87,7 @@ export default function Game() {
       setPity5(currentPity5);
       setPullResults(results);
       
-      // Update Record Inventory
+      // Inventory record
       setRecords(prev => ({
         6: prev[6] + count6,
         5: prev[5] + count5,

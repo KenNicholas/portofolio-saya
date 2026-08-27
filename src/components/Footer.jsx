@@ -23,10 +23,16 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-16">
           
           <div className="space-y-4 lg:col-span-1">
-            <div className="flex items-center gap-1.5 font-bold text-xl text-orange-950 dark:text-white">
-              <div className="w-3 h-3 rounded-full bg-amber-500"></div>
-              <div className="w-3 h-3 rounded-full bg-orange-500"></div>
-              <span className="ml-2 font-mono tracking-tight">KenKen</span>
+            {/* Logo */}
+            <div className="flex items-center font-bold text-slate-800 dark:text-white mr-1 lg:mr-2">
+              <a href="#home" className="flex items-center justify-center mr-1 lg:mr-1 group cursor-pointer select-none">
+              <img 
+                src="/logo-kenken.png" 
+                alt="KenKen Logo" 
+                className="h-8 md:h-9 lg:h-10 w-auto object-contain group-hover:scale-105 transition-transform duration-300 drop-shadow-sm"
+              />
+            </a>
+              <span className="font-mono tracking-tight text-xl lg:text-2xl text-transparent bg-clip-text bg-gradient-to-r from-amber-500 via-orange-500 to-rose-500">KenKen</span>
             </div>
             <p className="text-sm text-orange-900/80 dark:text-slate-400 leading-relaxed font-medium dark:font-normal">
               Designing and building intelligent systems, exploring modern tech, and crafting seamless user experiences.

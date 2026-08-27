@@ -1,19 +1,43 @@
-import React, { useState, useEffect } from 'react';
-import { Home, User, Code, Briefcase, Camera, Gamepad2, Mail, Sun, Moon, Menu, X } from 'lucide-react';
+import React, { useState, useEffect, useRef } from 'react';
+import { Home, User, GraduationCap, Code, Briefcase, Camera, Gamepad2, Mail, Sun, Moon, Menu, X } from 'lucide-react';
 
 export default function Navbar({ darkMode, setDarkMode }) {
   const [scrolled, setScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  
+  // Ref untuk mendeteksi klik di luar komponen navbar
+  const navRef = useRef(null);
 
+  // Effect untuk scroll
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Effect untuk menutup mobile menu saat klik di luar area navbar
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      // Jika ref ada, dan elemen yang diklik BUKAN bagian dari navbar
+      if (navRef.current && !navRef.current.contains(event.target)) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    // Tambahkan event listener untuk klik mouse atau sentuhan layar
+    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('touchstart', handleClickOutside);
+    
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('touchstart', handleClickOutside);
+    };
+  }, []);
+
   const navItems = [
     { name: 'Home', href: '#home', icon: <Home size={16} /> },
     { name: 'About', href: '#about', icon: <User size={16} /> },
+    { name: 'Education', href: '#experience', icon: <GraduationCap size={16} /> },
     { name: 'Skills', href: '#skills', icon: <Code size={16} /> },
     { name: 'Projects', href: '#projects', icon: <Briefcase size={16} /> },
     { name: 'Gallery', href: '#gallery', icon: <Camera size={16} /> },
@@ -22,7 +46,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
   ];
 
   return (
-    <div className="fixed top-6 left-0 right-0 z-50 flex flex-col items-center w-full pointer-events-none px-2 sm:px-4">
+    <div ref={navRef} className="fixed top-6 left-0 right-0 z-50 flex flex-col items-center w-full pointer-events-none px-2 sm:px-4">
       <nav className={`pointer-events-auto flex items-center justify-between gap-1 md:gap-1.5 lg:gap-4 px-3 py-2 lg:px-5 lg:py-3 rounded-full transition-all duration-500 shadow-2xl border w-full max-w-fit ${
         scrolled 
           ? 'bg-amber-100 dark:bg-[#111827] border-orange-200 dark:border-slate-700' 
@@ -30,10 +54,15 @@ export default function Navbar({ darkMode, setDarkMode }) {
       }`}>
         
         {/* Logo */}
-        <div className="flex items-center gap-0.5 lg:gap-1 font-bold text-slate-800 dark:text-white mr-1 lg:mr-2">
-          <div className="w-2.5 h-2.5 lg:w-3 lg:h-3 rounded-full bg-orange-500"></div>
-          <div className="w-2.5 h-2.5 lg:w-3 lg:h-3 rounded-full bg-amber-500"></div>
-          <span className="ml-1.5 lg:ml-2 font-mono tracking-tight text-sm lg:text-base hidden sm:block">KenKen</span>
+        <div className="flex items-center font-bold text-slate-800 dark:text-white mr-1 lg:mr-2">
+          <a href="#home" className="flex items-center justify-center mr-1 lg:mr-1 group cursor-pointer select-none">
+          <img 
+            src="/logo-kenken.png" 
+            alt="KenKen Logo" 
+            className="h-8 md:h-9 lg:h-10 w-auto object-contain group-hover:scale-105 transition-transform duration-300 drop-shadow-sm"
+          />
+        </a>
+          <span className="font-mono tracking-tight text-xl lg:text-2xl text-transparent bg-clip-text bg-gradient-to-r from-amber-500 via-orange-500 to-rose-500">KenKen</span>
         </div>
 
         {/* Desktop menu */}
@@ -61,7 +90,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
             {darkMode ? <Sun size={16} className="scale-90 lg:scale-100" /> : <Moon size={16} className="scale-90 lg:scale-100" />}
           </button>
 
-          {/* Hamburger menu for mobile */}
+          {/* Hamburger menu mobile */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="md:hidden p-1.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-orange-500 hover:text-white transition"

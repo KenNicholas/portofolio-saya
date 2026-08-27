@@ -8,27 +8,22 @@ export default function About() {
       <div className="w-[85%] max-w-6xl mx-auto">
         <Reveal>
           <div className="flex items-center gap-3 mb-8">
-            {/* PERBAIKAN: Ikon User di Dark Mode tetap berwarna Orens agar senada */}
             <User className="text-orange-500" size={28} />
             <h2 className="text-3xl font-bold">About me</h2>
           </div>
 
           <div className="space-y-6">
             
-            {/* Box 1: Who Am I? */}
-            {/* PERBAIKAN DARK MODE: Hover glow dan border diubah ke Orens/Amber */}
             <div className="bg-gradient-to-br from-orange-100 to-amber-100 dark:bg-[#111827] dark:bg-none p-8 rounded-2xl border-2 border-amber-400 dark:border dark:border-slate-800 shadow-lg dark:shadow-sm transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_25px_rgba(245,158,11,0.5)] dark:hover:shadow-[0_0_25px_rgba(245,158,11,0.2)] hover:border-orange-500 dark:hover:border-orange-500/50">
               <h3 className="text-xl font-bold mb-4 text-orange-900 dark:text-white">Who Am I?</h3>
               <p className="text-orange-950/80 dark:text-slate-400 leading-relaxed text-sm mb-4 text-justify font-medium dark:font-normal">
-                As an undergraduate Computer Science student specializing in Intelligent Systems and Software Development, I am convinced that AI will be the <i>game-changer</i> of our generation in many important aspects of our lives, set to revolutionize everything from economics to entertainment. My vision is to harness this technology to build practical, everyday applications that transforms the way we interact with technology by turning repetitive, mundane tasks into seamless, effortless experiences.
+                I am an undergraduate Computer Science student specializing in Intelligent Systems and Software Development, I am convinced that AI will be the <i>game-changer</i> of our generation in many important aspects of our lives, set to revolutionize everything from economics to entertainment. My vision is to harness this technology to build practical, everyday applications that transforms the way we interact with technology by turning repetitive, mundane tasks into seamless, effortless experiences.
               </p>
               <p className="text-orange-950/80 dark:text-slate-400 leading-relaxed text-sm text-justify font-medium dark:font-normal">
                 I am highly motivated to expand my expertise and am always eager to learn new technologies. Whether it's developing full-stack applications or managing technical infrastructure, I approach every project with a commitment to quality, accuracy, and continuous growth.
               </p>
             </div>
-
-            {/* Box 2: Design Philosophy */}
-            {/* PERBAIKAN DARK MODE: Hover glow dan border diubah ke Orens */}
+      
             <div className="bg-gradient-to-br from-amber-100 to-orange-100 dark:bg-[#111827] dark:bg-none p-8 rounded-2xl border-2 border-orange-400 dark:border dark:border-slate-800 shadow-lg dark:shadow-sm transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_25px_rgba(249,115,22,0.5)] dark:hover:shadow-[0_0_25px_rgba(249,115,22,0.2)] hover:border-orange-600 dark:hover:border-amber-500/50">
               <h3 className="text-xl font-bold mb-4 text-orange-900 dark:text-white">Design Philosophy</h3>
               <p className="text-orange-950/80 dark:text-slate-400 leading-relaxed text-sm text-justify font-medium dark:font-normal">
@@ -36,13 +31,10 @@ export default function About() {
               </p>
             </div>
 
-            {/* Box 3: Hobbies */}
-            {/* PERBAIKAN DARK MODE: Hover glow dan border diubah ke Amber */}
             <div className="bg-gradient-to-br from-orange-100 to-amber-100 dark:bg-[#111827] dark:bg-none p-8 rounded-2xl border-2 border-amber-400 dark:border dark:border-slate-800 shadow-lg dark:shadow-sm transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_25px_rgba(245,158,11,0.5)] dark:hover:shadow-[0_0_25px_rgba(245,158,11,0.2)] hover:border-orange-500 dark:hover:border-orange-400/50">
               <h3 className="text-xl font-bold mb-5 text-orange-900 dark:text-white">Hobbies</h3>
               <div className="flex flex-wrap gap-4">
                 
-                {/* Hobby Pills - Biarkan original karena memiliki warna-warni yang berbeda-beda */}
                 <span className="px-4 py-2 bg-white/60 dark:bg-slate-900 border-2 border-orange-300 dark:border dark:border-slate-700 rounded-xl text-sm font-bold dark:font-semibold text-orange-900 dark:text-slate-300 flex items-center gap-2 cursor-default transition-all duration-300 hover:scale-110 hover:bg-purple-100 dark:hover:bg-purple-900/40 hover:text-purple-700 dark:hover:text-purple-300 hover:border-purple-400 hover:shadow-[0_0_20px_rgba(168,85,247,0.4)]">
                   🎮 Gaming
                 </span>

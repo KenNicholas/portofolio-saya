@@ -63,8 +63,8 @@ export default function Hero() {
               {/* download and view buttons */}
               <div className="pt-2 flex flex-wrap gap-4">
                 <a 
-                  href="/CV_Ken_Nicholas.pdf" 
-                  download="CV_Ken_Nicholas.pdf"
+                  href="/CV_ATS_KenLatif.pdf" 
+                  download="CV_ATS_KenLatif.pdf"
                   className="group inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-400 hover:to-orange-500 hover:shadow-xl hover:shadow-orange-500/40 hover:-translate-y-1 text-white font-bold rounded-xl transition-all duration-300"
                 >
                   <Download size={18} className="group-hover:-translate-y-0.5 transition-transform" /> 
@@ -72,7 +72,7 @@ export default function Hero() {
                 </a>
 
                 <a 
-                  href="/CV_Ken_Nicholas.pdf" 
+                  href="/CV_ATS_KenLatif.pdf" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="group inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-gradient-to-r from-pink-500 to-rose-600 hover:from-pink-400 hover:to-rose-500 hover:shadow-xl hover:shadow-pink-500/40 hover:-translate-y-1 text-white font-bold rounded-xl transition-all duration-300"

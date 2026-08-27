@@ -115,7 +115,6 @@ export default function Experience() {
                     {item.desc}
                   </p>
 
-                  {/* Komentar dipindah ke luar blok kondisional agar tidak memecahkan parser Vite */}
                   {item.highlight && (
                     <div className="mt-5 inline-block px-4 py-2 bg-white/50 dark:bg-gradient-to-r dark:from-orange-900/20 dark:to-amber-900/20 border-2 border-orange-300 dark:border dark:border-amber-800/50 rounded-lg">
                       <span className="text-sm font-bold dark:font-black text-orange-900 dark:text-white flex items-center gap-2">
