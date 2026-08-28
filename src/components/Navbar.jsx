@@ -15,16 +15,13 @@ export default function Navbar({ darkMode, setDarkMode }) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Effect untuk menutup mobile menu saat klik di luar area navbar
   useEffect(() => {
     const handleClickOutside = (event) => {
-      // Jika ref ada, dan elemen yang diklik BUKAN bagian dari navbar
       if (navRef.current && !navRef.current.contains(event.target)) {
         setIsMobileMenuOpen(false);
       }
     };
 
-    // Tambahkan event listener untuk klik mouse atau sentuhan layar
     document.addEventListener('mousedown', handleClickOutside);
     document.addEventListener('touchstart', handleClickOutside);
     
