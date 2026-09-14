@@ -47,7 +47,7 @@ export default function Hero() {
                   <span className="text-xs text-slate-600 dark:text-slate-400 group-hover:text-orange-100 transition-colors duration-500 truncate">kennicholas89@gmail.com</span>
                 </a>
                 
-                <a href="https://www.linkedin.com/in/ken-nicholas-latif-6456a0325" target="_blank" rel="noreferrer" className="flex flex-col p-4 rounded-2xl bg-gradient-to-br from-blue-50/50 to-cyan-50/50 dark:from-blue-900/20 dark:to-cyan-900/20 border-2 border-blue-400/60 dark:border-blue-800/60 hover:from-amber-500 hover:to-orange-400 dark:hover:from-amber-500 dark:hover:to-orange-400 hover:-translate-y-1 hover:border-transparent transition-all duration-500 group shadow-sm">
+                <a href="https://www.linkedin.com/in/kennicholaslatif" target="_blank" rel="noreferrer" className="flex flex-col p-4 rounded-2xl bg-gradient-to-br from-blue-50/50 to-cyan-50/50 dark:from-blue-900/20 dark:to-cyan-900/20 border-2 border-blue-400/60 dark:border-blue-800/60 hover:from-amber-500 hover:to-orange-400 dark:hover:from-amber-500 dark:hover:to-orange-400 hover:-translate-y-1 hover:border-transparent transition-all duration-500 group shadow-sm">
                   <LinkedinIcon size={24} className="text-blue-600 dark:text-blue-400 group-hover:text-white mb-3 transition-colors duration-500" />
                   <span className="font-bold text-slate-900 dark:text-white text-sm group-hover:text-white transition-colors duration-500">LinkedIn</span>
                   <span className="text-xs text-slate-600 dark:text-slate-400 group-hover:text-amber-100 transition-colors duration-500 truncate">Ken Nicholas Latif</span>
